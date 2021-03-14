@@ -1,2 +1,2 @@
-# md_lib
-Testing libraries 
+# MD_Lib_Std
+ standard library
