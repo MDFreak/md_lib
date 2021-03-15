@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 16 2021 00:03:15 GMT+0100 (Mitteleuropäische Normalzeit)
+------------------------------------------------------
+
+Modified files:
+* .pio/build/esp32dev/.sconsign37.dblite
+* md_oled
+* md_wifi
+* src/test_md_lib.h
+
+
+Created files:
+* .autogit/logs/log-15-2-2021-23-32-52.txt
+
+
+Deleted files:
+
+
+Renamed files:
