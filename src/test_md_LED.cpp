@@ -5,7 +5,6 @@
 #if defined(TEST_MD_LIB_ACTIVE)
   #if defined( TEST_MD_LED)
 
-
     void setup_led()
       {
 
@@ -15,5 +14,6 @@
       {
 
       }
+
   #endif
 #endif

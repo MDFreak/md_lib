@@ -1,0 +1,28 @@
+-------------------- Auto-Git Log --------------------
+		Mon Mar 15 2021 01:14:29 GMT+0100 (Mitteleuropäische Normalzeit)
+------------------------------------------------------
+
+Modified files:
+* md_oled
+* md_wifi
+* src/main.cpp
+* src/test_md_lib.h
+
+
+Created files:
+* .autogit/logs/log-15-2-2021-0-44-9.txt
+* src/test_md_LED.cpp
+* src/test_md_buzzer.cpp
+* src/test_md_fram.cpp
+* src/test_md_keypadshield.cpp
+* src/test_md_lcd.cpp
+* src/test_md_oled.cpp
+* src/test_md_touch.cpp
+* src/test_md_webserver.cpp
+* src/test_md_wifi.cpp
+
+
+Deleted files:
+
+
+Renamed files:

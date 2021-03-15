@@ -5,7 +5,6 @@
 #if defined(TEST_MD_LIB_ACTIVE)
   #if defined( TEST_MD_KEYPAD)
 
-
     void setup_keypad()
       {
 
@@ -15,5 +14,6 @@
       {
 
       }
+
   #endif
 #endif
