@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Mon Mar 15 2021 02:15:55 GMT+0100 (Mitteleuropäische Normalzeit)
+------------------------------------------------------
+
+Modified files:
+* md_oled
+* md_wifi
+* src/test_md_lib.h
+
+
+Created files:
+* .autogit/logs/log-15-2-2021-1-45-39.txt
+
+
+Deleted files:
+
+
+Renamed files:
