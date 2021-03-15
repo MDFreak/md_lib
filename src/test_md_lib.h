@@ -16,6 +16,7 @@
       //#define TEST_MD_FRAM
       //#define TEST_MD_WIFI
 
+      #include <SPI.h>
       #include <md_util.h>
       #include <md_defines.h>
 
