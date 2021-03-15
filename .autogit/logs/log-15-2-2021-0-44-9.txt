@@ -1,0 +1,26 @@
+-------------------- Auto-Git Log --------------------
+		Mon Mar 15 2021 00:44:09 GMT+0100 (Mitteleuropäische Normalzeit)
+------------------------------------------------------
+
+Modified files:
+* md_oled
+* md_wifi
+
+
+Created files:
+* .pio/build/project.checksum
+* .vscode/c_cpp_properties.json
+* .vscode/extensions.json
+* .vscode/launch.json
+* include/README
+* lib/README
+* platformio.ini
+* src/main.cpp
+* src/test_md_lib.h
+* test/README
+
+
+Deleted files:
+
+
+Renamed files:
