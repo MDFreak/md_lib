@@ -5,6 +5,8 @@
 #if defined(TEST_MD_LIB_ACTIVE)
   #if defined(TEST_MD_OLED)
 
+    #include <md_oled.h>
+
     #define OLED1
     //#define OLED2
 
