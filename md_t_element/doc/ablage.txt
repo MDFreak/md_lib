@@ -1,0 +1,56 @@
+/*!
+ * @file Adafruit_MAX31855.h
+ *
+ * This is the documentation for Adafruit's MAX31855 thermocouple breakout
+ * driver for the Arduino platform.  It is designed specifically to work with
+ * the Adafruit MAX31855 breakout: https://www.adafruit.com/products/269
+ *
+ * These sensors use SPI to communicate, 3 pins are required
+ * to interface with the breakout.
+ *
+ * Adafruit invests time and resources providing this open source code,
+ * please support Adafruit and open-source hardware by purchasing
+ * products from Adafruit!
+ *
+ * Written by Limor Fried/Ladyada for Adafruit Industries.
+ *
+ * BSD license, all text above must be included in any redistribution.
+ *
+ */
+ 
+ 
+ /*!
+ * @file Adafruit_MAX31855.cpp
+ *
+ * @mainpage Adafruit MAX31855 Thermocouple Breakout Driver
+ *
+ * @section intro_sec Introduction
+ *
+ * This is the documentation for Adafruit's MAX31855 thermocouple breakout
+ * driver for the Arduino platform.  It is designed specifically to work with
+ * the Adafruit MAX31855 breakout: https://www.adafruit.com/products/269
+ *
+ * This breakout uses SPI to communicate, 3 pins are required
+ * to interface with the breakout.
+ *
+ * Adafruit invests time and resources providing this open source code,
+ * please support Adafruit and open-source hardware by purchasing
+ * products from Adafruit!
+ *
+ * @section dependencies Dependencies
+ *
+ * This library depends on <a
+ * href="https://github.com/adafruit/Adafruit_BusIO"> Adafruit_BusIO</a> being
+ * present on your system. Please make sure you have installed the latest
+ * version before using this library.
+ *
+ * @section author Author
+ *
+ * Written by Limor Fried/Ladyada for Adafruit Industries.
+ *
+ * @section license License
+ *
+ * BSD license, all text above must be included in any redistribution.
+ *
+ */
+
