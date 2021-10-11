@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "md_FastLED",
+			"path": "FastLED\\md_FastLED"
+		}
+	],
+  "settings": {}
+}

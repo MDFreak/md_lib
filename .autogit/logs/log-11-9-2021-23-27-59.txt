@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Mon Oct 11 2021 23:27:59 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* .pio/build/az-delivery-devkit-v4/idedata.json
+* .vscode/c_cpp_properties.json
+* md_oled
+* md_touch
+* md_util
+* md_webserver
+* md_wifi
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
