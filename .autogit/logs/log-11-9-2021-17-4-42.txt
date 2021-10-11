@@ -1,0 +1,1216 @@
+-------------------- Auto-Git Log --------------------
+		Mon Oct 11 2021 17:04:42 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* .pio/build/project.checksum
+* md_oled
+* md_touch
+* md_util
+* md_webserver
+* md_wifi
+* platformio.ini
+
+
+Created files:
+* .pio/build/az-delivery-devkit-v4/.sconsign37.dblite
+* .pio/build/az-delivery-devkit-v4/idedata.json
+* .pio/build/az-delivery-devkit-v4/partitions.bin
+* .pio/build/az-delivery-devkit-v4/tmpp8i7eg1o.tmp
+* .pio/build/az-delivery-devkit-v4/tmpqmh7e2kc.tmp
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/.github/ISSUE_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/.github/PULL_REQUEST_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/.github/workflows/githubci.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/.gitignore"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/.piopm"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/Adafruit_BME280.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/Adafruit_BME280.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/LICENSE"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/assets/board.jpg"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/examples/advancedsettings/advancedsettings.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/examples/bme280_unified/bme280_unified.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/examples/bme280test/bme280test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BME280 Library/library.properties"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/.github/ISSUE_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/.github/PULL_REQUEST_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/.github/workflows/githubci.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/.piopm"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/Adafruit_BusIO_Register.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/Adafruit_BusIO_Register.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/Adafruit_I2CDevice.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/Adafruit_I2CDevice.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/Adafruit_I2CRegister.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/Adafruit_SPIDevice.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/Adafruit_SPIDevice.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/LICENSE"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/examples/i2c_address_detect/i2c_address_detect.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/examples/i2c_readwrite/i2c_readwrite.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/examples/i2c_registers/i2c_registers.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/examples/i2corspi_register/i2corspi_register.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/examples/spi_modetest/spi_modetest.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/examples/spi_readwrite/spi_readwrite.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/examples/spi_register_bits/spi_register_bits.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/examples/spi_registers/spi_registers.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit BusIO/library.properties"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/.github/ISSUE_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/.github/PULL_REQUEST_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/.github/workflows/githubci.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/.gitignore"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/.piopm"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Adafruit_GFX.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Adafruit_GFX.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Adafruit_GrayOLED.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Adafruit_GrayOLED.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Adafruit_SPITFT.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Adafruit_SPITFT.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Adafruit_SPITFT_Macros.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMono12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMono18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMono24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMono9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoBold12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoBold18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoBold24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoBold9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoBoldOblique12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoBoldOblique18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoBoldOblique24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoBoldOblique9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoOblique12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoOblique18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoOblique24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeMonoOblique9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSans12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSans18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSans24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSans9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansBold12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansBold18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansBold24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansBold9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansBoldOblique12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansBoldOblique18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansBoldOblique24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansBoldOblique9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansOblique12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansOblique18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansOblique24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSansOblique9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerif12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerif18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerif24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerif9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifBold12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifBold18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifBold24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifBold9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifBoldItalic12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifBoldItalic18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifBoldItalic24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifBoldItalic9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifItalic12pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifItalic18pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifItalic24pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/FreeSerifItalic9pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/Org_01.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/Picopixel.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/Tiny3x3a2pt7b.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/Fonts/TomThumb.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/examples/GFXcanvas/GFXcanvas.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/examples/GFXcanvas/GFXcanvasSerialDemo.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/examples/mock_ili9341/mock_ili9341.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/fontconvert/Makefile"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/fontconvert/bdf2adafruit.py"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/fontconvert/fontconvert.c"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/fontconvert/fontconvert_win.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/fontconvert/makefonts.sh"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/gfxfont.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/glcdfont.c"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/library.properties"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit GFX Library/license.txt"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/.github/ISSUE_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/.github/PULL_REQUEST_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/.github/workflows/githubci.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/.gitignore"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/.piopm"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/Adafruit_ILI9341.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/Adafruit_ILI9341.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/breakouttouchpaint/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/breakouttouchpaint/breakouttouchpaint.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/graphicstest/graphicstest.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/graphicstest_featherwing/graphicstest_featherwing.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/graphicstest_pyportal/graphicstest_pyportal.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/mandelbrot/mandelbrot.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/onoffbutton/onoffbutton.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/onoffbutton_breakout/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/onoffbutton_breakout/onoffbutton_breakout.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/pictureEmbed/.leonardo.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/pictureEmbed/dragon.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/pictureEmbed/pictureEmbed.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/pyportal_boing/.pyportal.test.only"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/pyportal_boing/graphics.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/pyportal_boing/pyportal_boing.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/touchpaint/touchpaint.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/touchpaint_featherwing/touchpaint_featherwing.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/touchpaint_pyportal/.pyportal.test.only"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/examples/touchpaint_pyportal/touchpaint_pyportal.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341/library.properties"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/.github/ISSUE_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/.github/PULL_REQUEST_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/.github/workflows/githubci.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/.gitignore"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/.piopm"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/Adafruit_STMPE610.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/Adafruit_STMPE610.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/LICENSE"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/assets/board.jpg"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/code-of-conduct.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/examples/TouchTest/TouchTest.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit STMPE610/library.properties"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/.github/ISSUE_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/.github/PULL_REQUEST_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/.github/workflows/githubci.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/.piopm"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/TouchScreen.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/TouchScreen.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/code-of-conduct.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/examples/touchscreendemo/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/examples/touchscreendemo/touchscreendemo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/examples/touchscreendemoshield/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/examples/touchscreendemoshield/touchscreendemoshield.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/library.properties"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit TouchScreen/license.txt"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit Unified Sensor/.gitignore"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit Unified Sensor/Adafruit_Sensor.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit Unified Sensor/Adafruit_Sensor.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit Unified Sensor/LICENSE.txt"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit Unified Sensor/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit Unified Sensor/examples/sensortest/sensortest.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit Unified Sensor/library.properties"
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/.clang-format
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/.devcontainer/Dockerfile
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/.devcontainer/devcontainer.json
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/.gitattributes
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/.gitignore
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/.mbedignore
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/.prettierignore
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/ArduinoJson.h
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/CHANGELOG.md
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/CMakeLists.txt
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/CONTRIBUTING.md
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/LICENSE.md
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/SUPPORT.md
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/appveyor.yml
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/banner.svg
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/component.mk
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/JsonConfigFile/JsonConfigFile.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/JsonFilterExample/JsonFilterExample.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/JsonGeneratorExample/JsonGeneratorExample.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/JsonHttpClient/JsonHttpClient.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/JsonParserExample/JsonParserExample.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/JsonServer/JsonServer.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/JsonUdpBeacon/JsonUdpBeacon.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/MsgPackParser/MsgPackParser.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/ProgmemExample/ProgmemExample.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/examples/StringExample/StringExample.ino
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/library.json
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/library.properties
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson.h
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Array/ArrayFunctions.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Array/ArrayImpl.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Array/ArrayIterator.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Array/ArrayRef.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Array/ArrayShortcuts.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Array/ElementProxy.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Array/Utilities.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Collection/CollectionData.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Collection/CollectionImpl.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Configuration.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/DeserializationError.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/Filter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/NestingLimit.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/Reader.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/Readers/ArduinoStreamReader.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/Readers/ArduinoStringReader.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/Readers/FlashReader.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/Readers/IteratorReader.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/Readers/RamReader.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/Readers/StdStreamReader.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/Readers/VariantReader.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Deserialization/deserialize.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Document/BasicJsonDocument.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Document/DynamicJsonDocument.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Document/JsonDocument.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Document/StaticJsonDocument.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Json/EscapeSequence.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Json/JsonDeserializer.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Json/JsonSerializer.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Json/Latch.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Json/PrettyJsonSerializer.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Json/Utf16.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Json/Utf8.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Memory/Alignment.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Memory/MemoryPool.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Misc/SerializedValue.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Misc/Visitable.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/MsgPack/MsgPackDeserializer.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/MsgPack/MsgPackSerializer.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/MsgPack/endianess.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/MsgPack/ieee754.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Namespace.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Numbers/Float.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Numbers/FloatTraits.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Numbers/Integer.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Numbers/arithmeticCompare.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Numbers/convertNumber.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Numbers/parseNumber.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Object/MemberProxy.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Object/ObjectFunctions.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Object/ObjectImpl.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Object/ObjectIterator.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Object/ObjectRef.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Object/ObjectShortcuts.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Object/Pair.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/alias_cast.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/assert.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/attributes.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/ctype.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/integer.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/limits.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/math.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/mpl/max.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/pgmspace.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/pgmspace_generic.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/preprocessor.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/safe_strcmp.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/static_array.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/conditional.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/declval.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/enable_if.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/integral_constant.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_array.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_base_of.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_class.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_const.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_convertible.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_enum.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_floating_point.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_integral.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_pointer.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_same.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_signed.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_unsigned.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/make_unsigned.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/make_void.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_const.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_cv.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_reference.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/type_identity.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Polyfills/utility.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/CountingDecorator.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/Writer.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/Writers/ArduinoStringWriter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/Writers/DummyWriter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/Writers/PrintWriter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/Writers/StaticStringWriter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/Writers/StdStreamWriter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/Writers/StdStringWriter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/measure.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Serialization/serialize.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/StringStorage/StringCopier.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/StringStorage/StringMover.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/StringStorage/StringStorage.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/Adapters/ArduinoStringAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/Adapters/ConstRamStringAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/Adapters/FlashStringAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/Adapters/JsonStringAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/Adapters/RamStringAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/Adapters/SizedFlashStringAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/Adapters/SizedRamStringAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/Adapters/StdStringAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/Adapters/StringViewAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/IsWriteableString.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/StoragePolicy.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/String.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/StringAdapter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Strings/StringAdapters.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/Converter.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/ConverterImpl.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/SlotFunctions.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantCompare.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantContent.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantData.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantFunctions.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantImpl.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantOperators.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantRef.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantShortcuts.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantSlot.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantTag.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/VariantTo.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/Variant/Visitor.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/compatibility.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/ArduinoJson/version.hpp
+* .pio/libdeps/az-delivery-devkit-v4/ArduinoJson/src/CMakeLists.txt
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/.github/scripts/install-arduino-core-esp32.sh
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/.github/scripts/install-arduino-ide.sh
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/.github/scripts/install-platformio.sh
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/.github/scripts/on-push.sh
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/.github/stale.yml
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/.github/workflows/push.yml
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/.gitignore
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/.travis.yml
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/CMakeLists.txt
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/Kconfig.projbuild
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/LICENSE
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/README.md
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/component.mk
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/library.json
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/src/AsyncTCP.cpp
+* .pio/libdeps/az-delivery-devkit-v4/AsyncTCP-esphome/src/AsyncTCP.h
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/.gitignore
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/DallasTemperature.cpp
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/DallasTemperature.h
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/README.md
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/Alarm/Alarm.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/AlarmHandler/AlarmHandler.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/ExternalPullup/ExternalPullup.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/Multibus_simple/Multibus_simple.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/Multiple/Multiple.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/SaveRecallScratchPad/SaveRecallScratchPad.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/SetUserData/SetUserData.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/Simple/Simple.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/Single/Single.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/Tester/Tester.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/Timing/Timing.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/TwoPin_DS18B20/TwoPin_DS18B20.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/UserDataDemo/UserDataDemo.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/UserDataWriteBatch/UserDataWriteBatch.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/WaitForConversion/WaitForConversion.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/WaitForConversion2/WaitForConversion2.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/oneWireSearch/oneWireSearch.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/examples/readPowerSupply/readPowerSupply.ino
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/library.json
+* .pio/libdeps/az-delivery-devkit-v4/DallasTemperature/library.properties
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/.editorconfig"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/.github/ISSUE_TEMPLATE/bug_report.md"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/.github/ISSUE_TEMPLATE/support-request.md"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/.github/stale.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/.github/workflows/main.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/.gitignore"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/.piopm"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/CMakeLists.txt"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/CONTRIBUTING.md"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/README_GEOMETRY_64_48.md"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/UPGRADE-3.0.md"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/UPGRADE-4.0.md"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/component.mk"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306ClockDemo/SSD1306ClockDemo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306ClockDemo/images.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306DrawingDemo/SSD1306DrawingDemo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306OTADemo/SSD1306OTADemo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306SimpleDemo/SSD1306SimpleDemo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306SimpleDemo/images.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306TwoScreenDemo/SSD1306TwoScreenDemo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306TwoScreenDemo/images.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306UiDemo/SSD1306UiDemo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/examples/SSD1306UiDemo/images.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/keywords.txt"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/library.json"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/library.properties"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/license"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/platformio.ini"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/OLEDDisplay.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/OLEDDisplay.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/OLEDDisplayFonts.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/OLEDDisplayUi.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/OLEDDisplayUi.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/SH1106.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/SH1106Brzo.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/SH1106Spi.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/SH1106Wire.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/SSD1306.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/SSD1306Brzo.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/SSD1306I2C.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/SSD1306Spi.h"
+* ".pio/libdeps/az-delivery-devkit-v4/ESP8266 and ESP32 OLED driver for SSD1306 displays/src/SSD1306Wire.h"
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/.github/scripts/install-arduino-core-esp8266.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/.github/scripts/install-arduino-ide.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/.github/scripts/install-platformio.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/.github/scripts/on-push.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/.github/stale.yml
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/.github/workflows/push.yml
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/.gitignore
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/.travis.yml
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/LICENSE.txt
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/examples/ClientServer/Client/Client.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/examples/ClientServer/Client/config.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/examples/ClientServer/Server/Server.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/examples/ClientServer/Server/config.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/examples/SyncClient/.esp31b.skip
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/examples/SyncClient/SyncClient.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/library.json
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/AsyncPrinter.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/AsyncPrinter.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/DebugPrintMacros.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/ESPAsyncTCP.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/ESPAsyncTCP.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/ESPAsyncTCPbuffer.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/ESPAsyncTCPbuffer.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/SyncClient.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/SyncClient.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/async_config.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/tcp_axtls.c
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/src/tcp_axtls.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/ssl/gen_server_cert.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/ssl/server.cer
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncTCP-esphome/ssl/server.key
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.github/scripts/install-arduino-core-esp32.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.github/scripts/install-arduino-core-esp8266.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.github/scripts/install-arduino-ide.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.github/scripts/install-platformio.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.github/scripts/on-push.sh
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.github/stale.yml
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.github/workflows/push.yml
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.gitignore
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/.travis.yml
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/CMakeLists.txt
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/_config.yml
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/component.mk
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/examples/CaptivePortal/CaptivePortal.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/examples/ESP_AsyncFSBrowser/ESP_AsyncFSBrowser.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/examples/ESP_AsyncFSBrowser/data/.exclude.files
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/examples/ESP_AsyncFSBrowser/data/favicon.ico
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/examples/ESP_AsyncFSBrowser/data/index.htm
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/examples/regex_patterns/.test.build_flags
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/examples/regex_patterns/regex_patterns.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/examples/simple_server/simple_server.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/library.json
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/AsyncEventSource.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/AsyncEventSource.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/AsyncJson.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/AsyncWebSocket.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/AsyncWebSocket.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/AsyncWebSynchronization.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/ESPAsyncWebServer.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/SPIFFSEditor.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/SPIFFSEditor.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/StringArray.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/WebAuthentication.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/WebAuthentication.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/WebHandlerImpl.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/WebHandlers.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/WebRequest.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/WebResponseImpl.h
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/WebResponses.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/WebServer.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESPAsyncWebServer-esphome/src/edit.htm
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/.github/ISSUE_TEMPLATE/bug_report.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/.github/ISSUE_TEMPLATE/feature_request.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/.github/workflows/auto-github-actions.yml
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/.gitignore
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/CONTRIBUTING.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/LICENSE
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/changelog.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/examples/ConfigOnDRD_ESP32_minimal/ConfigOnDRD_ESP32_minimal.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/examples/ConfigOnDRD_ESP8266_minimal/ConfigOnDRD_ESP8266_minimal.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/examples/ConfigOnDoubleReset/ConfigOnDoubleReset.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/examples/minimal/minimal.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/library.json
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/library.properties
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/platformio/platformio.ini
+* .pio/libdeps/az-delivery-devkit-v4/ESP_DoubleResetDetector/src/ESP_DoubleResetDetector.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/.github/ISSUE_TEMPLATE/bug_report.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/.github/ISSUE_TEMPLATE/feature_request.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/.github/workflows/auto-github-actions.yml
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/.gitignore
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/CONTRIBUTING.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Configuration.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Configuration_1-0-11.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Configuration_1-0-8.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Configuration_1-0-9.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Configuration_Simple.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Configuration_Standard.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Info.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Info_Short.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Info_Short_1-0-5.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Main.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Main_1-0-5.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/Images/Saved.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/LICENSE
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/changelog.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/esp32s2_WebServer_Patch/WebServer.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/esp32s2_WebServer_Patch/WebServer.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/AutoConnect/AutoConnect.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/AutoConnectWithFSParameters/AutoConnectWithFSParameters.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/AutoConnectWithFeedback/AutoConnectWithFeedback.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/AutoConnectWithFeedbackLED/AutoConnectWithFeedbackLED.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/AutoConnect_ESP32_minimal/AutoConnect_ESP32_minimal.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/AutoConnect_ESP8266_minimal/AutoConnect_ESP8266_minimal.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnDRD_ESP32_minimal/ConfigOnDRD_ESP32_minimal.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnDRD_ESP8266_minimal/ConfigOnDRD_ESP8266_minimal.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnDRD_FS_MQTT_Ptr/ConfigOnDRD_FS_MQTT_Ptr.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnDRD_FS_MQTT_Ptr_Complex/ConfigOnDRD_FS_MQTT_Ptr_Complex.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnDRD_FS_MQTT_Ptr_Medium/ConfigOnDRD_FS_MQTT_Ptr_Medium.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnDoubleReset/ConfigOnDoubleReset.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnStartup/ConfigOnStartup.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnSwitch/ConfigOnSwitch.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnSwitch/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnSwitchFS/ConfigOnSwitchFS.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigOnSwitchFS_MQTT_Ptr/ConfigOnSwitchFS_MQTT_Ptr.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ConfigPortalParamsOnSwitch/ConfigPortalParamsOnSwitch.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/ESP32_FSWebServer.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/data/CanadaFlag_1.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/data/CanadaFlag_2.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/data/CanadaFlag_3.jpg
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/data/edit.htm.gz
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/data/favicon.ico
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/data/graphs.js.gz
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/data/index.htm
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/pics/esp8266fs.local.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer/pics/esp8266fs.local_edit.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/ESP32_FSWebServer_DRD.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/data/CanadaFlag_1.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/data/CanadaFlag_2.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/data/CanadaFlag_3.jpg
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/data/edit.htm.gz
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/data/favicon.ico
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/data/graphs.js.gz
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/data/index.htm
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/pics/esp8266fs.local.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP32_FSWebServer_DRD/pics/esp8266fs.local_edit.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/ESP_FSWebServer.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/data/CanadaFlag_1.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/data/CanadaFlag_2.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/data/CanadaFlag_3.jpg
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/data/edit.htm.gz
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/data/favicon.ico
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/data/graphs.js.gz
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/data/index.htm
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/pics/esp8266fs.local.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer/pics/esp8266fs.local_edit.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/ESP_FSWebServer_DRD.ino
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/README.md
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/data/CanadaFlag_1.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/data/CanadaFlag_2.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/data/CanadaFlag_3.jpg
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/data/edit.htm.gz
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/data/favicon.ico
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/data/graphs.js.gz
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/data/index.htm
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/pics/esp8266fs.local.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/examples/ESP_FSWebServer_DRD/pics/esp8266fs.local_edit.png
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/library.json
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/library.properties
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/platformio/platformio.ini
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src/ESP_WiFiManager-Impl.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src/ESP_WiFiManager.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src/ESP_WiFiManager_Debug.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src/utils/TZ.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src_cpp/ESP_WiFiManager.cpp
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src_cpp/ESP_WiFiManager.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src_cpp/ESP_WiFiManager_Debug.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src_cpp/utils/TZ.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src_h/ESP_WiFiManager-Impl.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src_h/ESP_WiFiManager.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src_h/ESP_WiFiManager_Debug.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/src_h/utils/TZ.h
+* .pio/libdeps/az-delivery-devkit-v4/ESP_WifiManager/travis/common.sh
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/LICENSE
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/README.md
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/.gitignore
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/README.md
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/data/file1.txt
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/data/testfolder/test2.txt
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/include/.placeholder.txt
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/lib/.placeholder.txt
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/littlefsbuilder.py
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/partitions_custom.csv
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/platformio.ini
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_PlatformIO/src/main.cpp
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_test/LittleFS_test.ino
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_test/partitions.csv
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/examples/LITTLEFS_time/LITTLEFS_time.ino
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/library.json
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/library.properties
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/LICENSE
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/LICENSE.md
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/LITTLEFS.cpp
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/LITTLEFS.h
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/esp_littlefs.c
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/esp_littlefs.h
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/lfs.c
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/lfs.h
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/lfs_util.c
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/lfs_util.h
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/littlefs_api.c
+* .pio/libdeps/az-delivery-devkit-v4/LittleFS_esp32/src/littlefs_api.h
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/.travis.yml
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/CHANGELOG
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/NTPClient.cpp
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/NTPClient.h
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/README.md
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/examples/Advanced/Advanced.ino
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/examples/Basic/Basic.ino
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/library.json
+* .pio/libdeps/az-delivery-devkit-v4/NTPClient/library.properties
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/OneWire.cpp
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/OneWire.h
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/docs/issue_template.md
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/examples/DS18x20_Temperature/DS18x20_Temperature.pde
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/examples/DS2408_Switch/DS2408_Switch.pde
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/examples/DS250x_PROM/DS250x_PROM.pde
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/library.json
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/library.properties
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/util/OneWire_direct_gpio.h
+* .pio/libdeps/az-delivery-devkit-v4/OneWire/util/OneWire_direct_regtype.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/.gitattributes
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/.gitignore
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Extensions/Button.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Extensions/Button.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Extensions/Smooth_font.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Extensions/Smooth_font.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Extensions/Sprite.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Extensions/Sprite.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Extensions/Touch.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Extensions/Touch.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Custom/Orbitron_Light_24.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Custom/Orbitron_Light_32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Custom/Roboto_Thin_24.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Custom/Satisfy_24.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Custom/Yellowtail_32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font16.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font16.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font32rle.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font32rle.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font64rle.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font64rle.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font72rle.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font72rle.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font72x53rle.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font72x53rle.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font7srle.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/Font7srle.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMono12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMono18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMono24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMono9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoBold12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoBold18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoBold24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoBold9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoBoldOblique12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoBoldOblique18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoBoldOblique24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoBoldOblique9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoOblique12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoOblique18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoOblique24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeMonoOblique9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSans12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSans18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSans24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSans9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansBold12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansBold18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansBold24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansBold9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansBoldOblique12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansBoldOblique18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansBoldOblique24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansBoldOblique9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansOblique12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansOblique18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansOblique24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSansOblique9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerif12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerif18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerif24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerif9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifBold12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifBold18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifBold24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifBold9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifBoldItalic12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifBoldItalic18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifBoldItalic24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifBoldItalic9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifItalic12pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifItalic18pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifItalic24pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/FreeSerifItalic9pt7b.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/TomThumb.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/gfxfont.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/license.txt
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/GFXFF/print.txt
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/TrueType/Not_yet_supported.txt
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Fonts/glcdfont.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_ESP32.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_ESP32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_ESP8266.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_ESP8266.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_Generic.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_Generic.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_RP2040.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_RP2040.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_STM32.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Processors/TFT_eSPI_STM32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/README.md
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/README.txt
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/EPD_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/GC9A01_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/GC9A01_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/GC9A01_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/HX8357D_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/HX8357D_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/HX8357D_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9163_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9163_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9163_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9225_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9225_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9225_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9341_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9341_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9341_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9481_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9481_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9481_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9486_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9486_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9486_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9488_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9488_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ILI9488_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/R61581_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/R61581_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/R61581_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/RM68140_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/RM68140_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/RM68140_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/S6D02A1_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/S6D02A1_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/S6D02A1_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/SSD1351_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/SSD1351_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/SSD1351_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/SSD1963_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/SSD1963_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/SSD1963_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7735_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7735_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7735_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7789_2_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7789_2_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7789_2_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7789_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7789_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7789_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7796_Defines.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7796_Init.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_Drivers/ST7796_Rotation.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_eSPI.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/TFT_eSPI.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Tools/Create_Smooth_Font/Create_font/Create_font.pde
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Tools/Create_Smooth_Font/Create_font/FontFiles/Final-Frontier28.vlw
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Tools/Create_Smooth_Font/Create_font/data/Final-Frontier.ttf
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Tools/Images/README.md
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Tools/Images/bmp2array4bit.py
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Tools/Images/star.bmp
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Tools/PlatformIO/Configuring options.txt"
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/Tools/Screenshot_client/Screenshot_client.pde
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setup.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setup_Select.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup10_RPi_touch_ILI9486.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup11_RPi_touch_ILI9486.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup12_M5Stack.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup135_ST7789.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup136_LilyGo_TTV.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup13_ILI9481_Parallel.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup14_ILI9341_Parallel.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup15_HX8357D.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup16_ILI9488_Parallel.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup17_ePaper.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup18_ST7789.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup19_RM68140_Parallel.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup1_ILI9341.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup200_GC9A01.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup201_WT32_SC01.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup202_SSD1351_128.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup20_ILI9488.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup21_ILI9488.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup22_TTGO_T4.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup22_TTGO_T4_v1.3.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup23_TTGO_TM.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup24_ST7789.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup25_TTGO_T_Display.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup26_TTGO_T_Wristband.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup27_RPi_ST7796_ESP32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup28_RPi_ST7796_ESP8266.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup29_ILI9341_STM32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup2_ST7735.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup30_ILI9341_Parallel_STM32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup31_ST7796_Parallel_STM32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup32_ILI9341_STM32F103.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup33_RPi_ILI9486_STM32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup34_ILI9481_Parallel_STM32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup35_ILI9341_STM32_Port_Bus.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup36_RPi_touch_ST7796.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup3_ILI9163.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup43_ST7735.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup44_TTGO_CameraPlus.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup45_TTGO_T_Watch.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup46_GC9A01_ESP32.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup47_ST7735.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup4_S6D02A1.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup50_SSD1963_Parallel.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup51_LilyPi_ILI9481.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup5_RPi_ILI9486.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup60_RP2040_ILI9341.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup6_RPi_Wr_ILI9486.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup7_ST7735_128x128.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup8_ILI9163_128x128.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/Setup9_ST7735_Overlap.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/SetupX_Template.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/User_Setups/User_Custom_Fonts.h
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/Arduino_Life/Arduino_Life.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/Pong_v3/Pong_v3.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/RLE_Font_test/RLE_Font_test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_Char_times/TFT_Char_times.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_Clock/TFT_Clock.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_Clock_Digital/TFT_Clock_Digital.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_Ellipse/TFT_Ellipse.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_Meter_5/TFT_Meter_5.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_Print_Test/TFT_Print_Test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_Rainbow/TFT_Rainbow.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_flash_jpg/TFT_flash_jpg.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_flash_jpg/jpeg1.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_flash_jpg/jpeg2.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_flash_jpg/jpeg3.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_flash_jpg/jpeg4.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_graphicstest_PDQ3/TFT_graphicstest_PDQ3.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/TFT_graphicstest_small/TFT_graphicstest_small.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/160 x 128/UTFT_demo_fast/UTFT_demo_fast.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/All_Free_Fonts_Demo/All_Free_Fonts_Demo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/All_Free_Fonts_Demo/Free_Fonts.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/Cellular_Automata/Cellular_Automata.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/Free_Font_Demo/Free_Font_Demo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/Free_Font_Demo/Free_Fonts.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/Keypad_240x320/Keypad_240x320.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/RLE_Font_test/RLE_Font_test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/Read_ID_bitbash/Read_ID_bitbash.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_ArcFill/TFT_ArcFill.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Char_times/TFT_Char_times.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Clock/TFT_Clock.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Clock_Digital/TFT_Clock_Digital.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Custom_Fonts/TFT_Custom_Fonts.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Ellipse/TFT_Ellipse.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_FillArcSpiral/TFT_FillArcSpiral.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Float_Test/TFT_Float_Test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Mandlebrot/TFT_Mandlebrot.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Matrix/TFT_Matrix.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Meter_linear/TFT_Meter_linear.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Meters/TFT_Meters.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Pie_Chart/TFT_Pie_Chart.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Pong/TFT_Pong.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Print_Test/TFT_Print_Test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Rainbow_one_lib/TFT_Rainbow_one_lib.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Read_Reg/TFT_Read_Reg.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Spiro/TFT_Spiro.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Starfield/TFT_Starfield.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_String_Align/TFT_String_Align.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_Terminal/TFT_Terminal.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_graphicstest_PDQ/TFT_graphicstest_PDQ.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/TFT_graphicstest_one_lib/TFT_graphicstest_one_lib.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/320 x 240/UTFT_demo/UTFT_demo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/Cellular_Automata/Cellular_Automata.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/Demo_3D_cube/Demo_3D_cube.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/Free_Font_Demo/Free_Font_Demo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/Free_Font_Demo/Free_Fonts.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/Graph_2/Graph_2.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/Keypad_480x320/Keypad_480x320.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_Char_times/TFT_Char_times.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_Ellipse/TFT_Ellipse.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_Meter_4/TFT_Meter_4.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_Meters/TFT_Meters.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_Padding_demo/TFT_Padding_demo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_Print_Test/TFT_Print_Test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_Rainbow480/TFT_Rainbow480.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_String_Align/TFT_String_Align.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_flash_jpg/TFT_flash_jpg.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_flash_jpg/jpeg1.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_flash_jpg/jpeg2.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_flash_jpg/jpeg3.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_flash_jpg/jpeg4.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_graphicstest_one_lib/TFT_graphicstest_one_lib.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_ring_meter/Alert.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/TFT_ring_meter/TFT_ring_meter.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/Touch_Controller_Demo/Touch_Controller_Demo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/480 x 320/UTFT_Demo_480x320/UTFT_Demo_480x320.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/DMA test/Bouncy_Circles/Bouncy_Circles.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/DMA test/Flash_Jpg_DMA/Flash_Jpg_DMA.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/DMA test/Flash_Jpg_DMA/panda.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/DMA test/SpriteRotatingCube/SpriteRotatingCube.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/DMA test/boing_ball/boing_ball.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/DMA test/boing_ball/graphic.h"
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/Animated_Eyes_1.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/config.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/catEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/defaultEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/doeEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/dragonEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/goatEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/logo.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/naugaEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/newtEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/noScleraEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/owlEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/data/terminatorEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/eye_functions.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/user.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/user_bat.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_1/user_xmas.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/Animated_Eyes_2.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/config.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/catEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/defaultEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/doeEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/dragonEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/goatEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/logo.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/naugaEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/newtEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/noScleraEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/owlEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/data/terminatorEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/eye_functions.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/user.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/user_bat.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/user_xmas.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Animated_Eyes_2/wiring.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/ESP32_SDcard_jpeg/ESP32_SDcard_jpeg.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/ESP8266_uncannyEyes/ESP8266_uncannyEyes.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/ESP8266_uncannyEyes/defaultEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/ESP8266_uncannyEyes/dragonEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/ESP8266_uncannyEyes/goatEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/ESP8266_uncannyEyes/noScleraEye.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/ESP8266_uncannyEyes/screenshotToConsole.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Local_Custom_Fonts/Local_Custom_Fonts.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Local_Custom_Fonts/MyFont.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/On_Off_Button/On_Off_Button.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_Button_Label_Datum/TFT_Button_Label_Datum.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_Flash_Bitmap/Alert.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_Flash_Bitmap/Close.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_Flash_Bitmap/Info.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_Flash_Bitmap/TFT_Flash_Bitmap.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_SPIFFS_BMP/BMP_functions.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_SPIFFS_BMP/TFT_SPIFFS_BMP.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_SPIFFS_BMP/data/parrot.bmp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_Screen_Capture/TFT_Screen_Capture.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_Screen_Capture/processing_sketch.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/TFT_Screen_Capture/screenServer.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Touch_calibrate/Touch_calibrate.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Viewport_Demo/Viewport_Demo.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Viewport_Demo/Viewport_commands.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/Viewport_graphicstest/Viewport_graphicstest.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/alphaBlend_Test/alphaBlend_Test.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/drawXBitmap/drawXBitmap.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Generic/drawXBitmap/xbm.h
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_1_Array/Font_Demo_1_Array.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_1_Array/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_1_Array/NotoSansBold15.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_1_Array/NotoSansBold36.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_2_Array/Font_Demo_2_Array.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_2_Array/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_2_Array/NotoSansBold15.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_2_Array/NotoSansBold36.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_3_Array/Font_Demo_3_Array.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_3_Array/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_3_Array/NotoSansBold15.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_3_Array/NotoSansBold36.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_3_Array/NotoSansMonoSCB20.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_4_Array/Font_Demo_4_Array.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_4_Array/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_4_Array/NotoSansBold15.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Font_Demo_4_Array/NotoSansBold36.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Print_Smooth_Font/Final_Frontier_28.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Print_Smooth_Font/Print_Smooth_Font.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Smooth_font_gradient/NotoSansBold15.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Smooth_font_gradient/NotoSansBold36.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Smooth_font_gradient/Smooth_font_gradient.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Smooth_font_reading_TFT/NotoSansBold15.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Smooth_font_reading_TFT/NotoSansBold36.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Smooth_font_reading_TFT/Smooth_font_reading_TFT.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Unicode_test/Final_Frontier_28.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Unicode_test/Latin_Hiragana_24.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Unicode_test/Unicode_Test_72.h"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Unicode_test/Unicode_test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Unicode_test/data/Final-Frontier-28.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Unicode_test/data/Latin-Hiragana-24.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/FLASH_Array/Unicode_test/data/Unicode-Test-72.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_1/Font_Demo_1.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_1/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_1/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_1/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_2/Font_Demo_2.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_2/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_2/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_2/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_3/Font_Demo_3.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_3/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_3/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_3/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_3/data/NotoSansMonoSCB20.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_4/Font_Demo_4.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_4/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_4/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Font_Demo_4/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Print_Smooth_Font/Print_Smooth_Font.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Print_Smooth_Font/data/Final-Frontier-28.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Smooth_font_gradient/Smooth_font_gradient.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Smooth_font_gradient/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Smooth_font_gradient/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Smooth_font_reading_TFT/Smooth_font_reading_TFT.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Smooth_font_reading_TFT/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Smooth_font_reading_TFT/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Unicode_test/LittleFS_functions.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Unicode_test/Unicode_test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Unicode_test/data/Final-Frontier-28.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Unicode_test/data/Latin-Hiragana-24.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/LittleFS/Unicode_test/data/Unicode-Test-72.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SD_Card/ESP32_Smooth_Font_SD/ESP32_Smooth_Font_SD.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SD_Card/ESP32_Smooth_Font_SD/data/Final-Frontier-28.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_1/Font_Demo_1.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_1/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_1/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_1/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_2/Font_Demo_2.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_2/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_2/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_2/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_3/Font_Demo_3.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_3/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_3/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_3/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_3/data/NotoSansMonoSCB20.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_4/Font_Demo_4.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_4/Notes.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_4/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Font_Demo_4/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Print_Smooth_Font/Print_Smooth_Font.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Print_Smooth_Font/data/Final-Frontier-28.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Smooth_font_gradient/Smooth_font_gradient.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Smooth_font_gradient/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Smooth_font_gradient/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Smooth_font_reading_TFT/Smooth_font_reading_TFT.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Smooth_font_reading_TFT/data/NotoSansBold15.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Smooth_font_reading_TFT/data/NotoSansBold36.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Unicode_test/SPIFFS_functions.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Unicode_test/Unicode_test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Unicode_test/data/Final-Frontier-28.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Unicode_test/data/Latin-Hiragana-24.vlw"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Smooth Fonts/SPIFFS/Unicode_test/data/Unicode-Test-72.vlw"
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Animated_dial/Animated_dial.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Animated_dial/NotoSansBold36.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Animated_dial/dial.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/One_bit_Sprite_Demo/One_bit_Sprite_Demo.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/One_bit_Yin_Yang/One_bit_Yin_Yang.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Orrery/Orrery.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Orrery/astronomy.c
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Orrery/astronomy.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Rotated_Sprite_1/Rotated_Sprite_1.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Rotated_Sprite_2/Rotated_Sprite_2.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Rotated_Sprite_3/Rotated_Sprite_3.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_RLE_Font_test/Sprite_RLE_Font_test.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_TFT_Rainbow/Sprite_TFT_Rainbow.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_draw/Sprite_draw.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_draw_4bit/Sprite_draw_4bit.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_image_4bit/Sprite_image_4bit.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_image_4bit/sample_images.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_image_4bit/starImage.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_scroll/Sprite_scroll.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_scroll_16bit/Sprite_scroll_16bit.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_scroll_1bit/Sprite_scroll_1bit.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_scroll_4bit/Sprite_scroll_4bit.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_scroll_8bit/Sprite_scroll_8bit.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Sprite_scroll_wrap_1bit/Sprite_scroll_wrap_1bit.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Transparent_Sprite_Demo/Transparent_Sprite_Demo.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Sprite/Transparent_Sprite_Demo_4bit/Transparent_Sprite_Demo_4bit.ino
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Test and diagnostics/Colour_Test/Colour_Test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Test and diagnostics/Read_User_Setup/Read_User_Setup.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Test and diagnostics/TFT_ReadWrite_Test/TFT_ReadWrite_Test.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/Test and diagnostics/Test_Touch_Controller/Test_Touch_Controller.ino"
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/ePaper/Floyd_Steinberg/EPD_Support.h
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/ePaper/Floyd_Steinberg/Floyd_Steinberg.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/ePaper/Floyd_Steinberg/Floyd_Steinberg_BMP.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/ePaper/Floyd_Steinberg/SPIFFS.ino
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/ePaper/Floyd_Steinberg/data/TestCard.bmp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/examples/ePaper/Floyd_Steinberg/data/Tiger.bmp
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/library.json
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/library.properties
+* .pio/libdeps/az-delivery-devkit-v4/TFT_eSPI/license.txt
+* .pio/libdeps/az-delivery-devkit-v4/TouchEvent/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/TouchEvent/LICENSE
+* .pio/libdeps/az-delivery-devkit-v4/TouchEvent/README.md
+* .pio/libdeps/az-delivery-devkit-v4/TouchEvent/examples/TouchEventDemo/TouchEventDemo.ino
+* .pio/libdeps/az-delivery-devkit-v4/TouchEvent/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/TouchEvent/library.properties
+* .pio/libdeps/az-delivery-devkit-v4/TouchEvent/src/TouchEvent.cpp
+* .pio/libdeps/az-delivery-devkit-v4/TouchEvent/src/TouchEvent.h
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/.piopm
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/README.md
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/XPT2046_Touchscreen.cpp
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/XPT2046_Touchscreen.h
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/docs/issue_template.md
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/examples/ILI9341Test/ILI9341Test.ino
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/examples/TouchTest/TouchTest.ino
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/examples/TouchTestIRQ/TouchTestIRQ.ino
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/keywords.txt
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/library.json
+* .pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen/library.properties
+
+
+Deleted files:
+* .pio/build/esp32dev/idedata.json
+
+
+Renamed files:
