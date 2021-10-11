@@ -15,6 +15,7 @@ bool TouchControllerWS::isTouched(int16_t debounceMillis) {
   }
   return false;
 }
+
 TS_Point TouchControllerWS::getPoint() {
     TS_Point p = touchScreen->getPoint();
     /*

@@ -57,8 +57,6 @@ void DisplayDriver::setRotation(uint8_t x) {
     }
 }
 
-
-
 // Return the size of the display (per current rotation)
 int16_t DisplayDriver::width(void) const {
     return _width;

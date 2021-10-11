@@ -24,128 +24,136 @@ See more at https://thingpulse.com
 
 Many thanks go to various contributors such as Adafruit, Waveshare.
 */
-#include "md_grafx.h"
+#include <md_grafx.h>
 
-MiniGrafx::MiniGrafx(DisplayDriver *driver, uint8_t bitsPerPixel, uint16_t *palette)
+mdGrafx::mdGrafx(uint8_t bitsPerPixel, uint16_t *palette)
   {
-    this->driver = driver;
-    this->width = driver->width();
-    this->initialWidth = driver->width();
-    this->height = driver->height();
-    this->initialHeight = driver->height();
-    this->palette = palette;
-    this->bitsPerPixel = bitsPerPixel;
+//    this->_width = _pdriver->width();
+//    this->_initialWidth = _pdriver->width();
+//    this->_height = _pdriver->height();
+//    this->_initialHeight = _pdriver->height();
+    this->_palette = palette;
+    this->_bitsPerPixel = bitsPerPixel;
     //initializeBuffer();
   }
 
-MiniGrafx::MiniGrafx(DisplayDriver *driver, uint8_t bitsPerPixel, uint16_t *palette, uint16_t width, uint16_t height)
+mdGrafx::mdGrafx(uint8_t bitsPerPixel, uint16_t *palette, uint16_t width, uint16_t height)
   {
-    this->driver = driver;
-    this->width = width;
-    this->initialWidth = width;
-    this->height = height;
-    this->initialHeight = height;
-    this->palette = palette;
-    this->bitsPerPixel = bitsPerPixel;
+    this->_width = width;
+    this->_initialWidth = _width;
+    this->_height = height;
+    this->_initialHeight = height;
+    this->_palette = palette;
+    this->_bitsPerPixel = bitsPerPixel;
   }
 
-void MiniGrafx::init()
+//
+void mdGrafx::init(DisplayDriver* pdriver, uint8_t spi_bus)
   {
+    this->_pdriver = pdriver;
+    if (!this->_width) this->_width = _pdriver->width();
+    this->_initialWidth = _width;
+    if (!this->_height) this->_height = _pdriver->height();
+    this->_initialHeight = _height;
+    SOUT("mdGrafx init ... init _buffer ... ");
     this->initializeBuffer();
-    this->driver->init();
+    SOUTLN(" _pdriver->init ... ");
+    this->_pdriver->init(spi_bus);
+    SOUTLN("ready");
   }
 
-void MiniGrafx::initializeBuffer()
+void mdGrafx::initializeBuffer()
   {
-    this->bitMask = (1 << bitsPerPixel) - 1;
-    this->pixelsPerByte = 8 / bitsPerPixel;
+    this->_bitMask = (1 << _bitsPerPixel) - 1;
+    this->_pixelsPerByte = 8 / _bitsPerPixel;
     // bitsPerPixel: 8, pixPerByte: 1, 0  1 = 2^0
     // bitsPerPixel: 4, pixPerByte: 2, 1  2 = 2^1
     // bitsPerPixel  2, pixPerByte: 4, 2  4 = 2^2
     // bitsPerPixel  1, pixPerByte: 8, 3  8 = 2^3
     // TODO: I was too stupid or too lazy to get the formula for this
-    switch(bitsPerPixel)
+    switch(_bitsPerPixel)
       {
         case 1:
-          this->bitShift = 3;
+          this->_bitShift = 3;
           break;
         case 2:
-          this->bitShift = 2;
+          this->_bitShift = 2;
           break;
         case 4:
-          this->bitShift = 1;
+          this->_bitShift = 1;
           break;
         case 8:
-          this->bitShift = 0;
+          this->_bitShift = 0;
           break;
         case 16:
-          this->bitShift = 0;
-          this->bitMask = 0xFFFF;
-          this->bufferSize = this->width * this->height * 2;
-          this->buffer = (uint8_t*) malloc(sizeof(uint8_t) * bufferSize);
+          this->_bitShift = 0;
+          this->_bitMask = 0xFFFF;
+          this->_bufferSize = this->_width * this->_height * 2;
+          this->_buffer = (uint8_t*) malloc(sizeof(uint8_t) * _bufferSize);
           return;
           break;
       }
 
-    this->bufferSize = this->width * this->height / (pixelsPerByte);
-    this->buffer = (uint8_t*) malloc(sizeof(uint8_t) * bufferSize);
-    //Serial.print(" Minigrafx buffersize "); Serial.println(sizeof(uint8_t) * bufferSize);
-    if(!this->buffer)
+    this->_bufferSize = this->_width * this->_height / (_pixelsPerByte);
+    this->_buffer = (uint8_t*) malloc(sizeof(uint8_t) * _bufferSize);
+    SOUT(" size "); SOUT(sizeof(uint8_t) * _bufferSize);
+    if(!this->_buffer)
       {
         Serial.println("[DEBUG_MINI_GRAFX][init] Not enough memory to create display\n");
       }
   }
 
-void MiniGrafx::freeBuffer()
+void mdGrafx::freeBuffer()
   {
-    free(this->buffer);
+    free(this->_buffer);
   }
 
-void MiniGrafx::changeBitDepth(uint8_t bitsPerPixel, uint16_t *palette)
+void mdGrafx::changeBitDepth(uint8_t bitsPerPixel, uint16_t *palette)
   {
-    free(this->buffer);
+    free(this->_buffer);
     initializeBuffer();
   }
 
-uint16_t MiniGrafx::getHeight()
+uint16_t mdGrafx::getHeight()
   {
-    return this->height;
+    return this->_height;
   }
 
-uint16_t MiniGrafx::getWidth()
+uint16_t mdGrafx::getWidth()
   {
-    return this->width;
+    return this->_width;
   }
 
-void MiniGrafx::setRotation(uint8_t m)
+void mdGrafx::setRotation(uint8_t m)
   {
-    rotation = m % 4; // can't be higher than 3
-    switch (rotation) {
-     case 0:
-     case 2:
-       this->width  = this->initialWidth;
-       this->height = this->initialHeight;
-       break;
-     case 1:
-     case 3:
-       this->width  = this->initialHeight;
-       this->height = this->initialWidth;
-       break;
-    }
-    this->driver->setRotation(m);
+    _rotation = m % 4; // can't be higher than 3
+    switch (_rotation)
+      {
+        case 0:
+        case 2:
+          this->_width  = this->_initialWidth;
+          this->_height = this->_initialHeight;
+          break;
+        case 1:
+        case 3:
+          this->_width  = this->_initialHeight;
+          this->_height = this->_initialWidth;
+          break;
+      }
+    this->_pdriver->setRotation(m);
   }
 
-void MiniGrafx::setColor(uint16_t color)
+void mdGrafx::setColor(uint16_t color)
   {
-    this->color = color & this->bitMask;
+    this->_color = color & this->_bitMask;
   }
 
-void MiniGrafx::setTransparentColor(uint16_t transparentColor)
+void mdGrafx::setTransparentColor(uint16_t transparentColor)
   {
-    this->transparentColor = transparentColor;
+    this->_transparentColor = transparentColor;
   }
 
-void MiniGrafx::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1)
+void mdGrafx::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1)
   {
     int16_t steep = abs(y1 - y0) > abs(x1 - x0);
     if (steep)
@@ -195,7 +203,7 @@ void MiniGrafx::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1)
       }
   }
 
-void MiniGrafx::drawCircle(int16_t x0, int16_t y0, uint16_t radius)
+void mdGrafx::drawCircle(int16_t x0, int16_t y0, uint16_t radius)
   {
       int16_t x = 0, y = radius;
     int16_t dp = 1 - radius;
@@ -223,7 +231,7 @@ void MiniGrafx::drawCircle(int16_t x0, int16_t y0, uint16_t radius)
     setPixel(x0, y0 - radius);
   }
 
-void MiniGrafx::drawRect(int16_t x, int16_t y, int16_t width, int16_t height)
+void mdGrafx::drawRect(int16_t x, int16_t y, int16_t width, int16_t height)
   {
     drawHorizontalLine(x, y, width);
     drawVerticalLine(x, y, height);
@@ -231,7 +239,7 @@ void MiniGrafx::drawRect(int16_t x, int16_t y, int16_t width, int16_t height)
     drawHorizontalLine(x, y + height, width);
   }
 
-void MiniGrafx::fillRect(int16_t xMove, int16_t yMove, int16_t width, int16_t height)
+void mdGrafx::fillRect(int16_t xMove, int16_t yMove, int16_t width, int16_t height)
   {
     for (int16_t x = xMove; x < xMove + width; x++)
       {
@@ -239,7 +247,7 @@ void MiniGrafx::fillRect(int16_t xMove, int16_t yMove, int16_t width, int16_t he
       }
   }
 
-void MiniGrafx::fillCircle(int16_t x0, int16_t y0, int16_t radius)
+void mdGrafx::fillCircle(int16_t x0, int16_t y0, int16_t radius)
   {
     int16_t x = 0, y = radius;
     int16_t dp = 1 - radius;
@@ -261,7 +269,7 @@ void MiniGrafx::fillCircle(int16_t x0, int16_t y0, int16_t radius)
 
   }
 
-void MiniGrafx::drawHorizontalLine(int16_t x, int16_t y, int16_t length)
+void mdGrafx::drawHorizontalLine(int16_t x, int16_t y, int16_t length)
   {
     int16_t x1 = x;
     int16_t x2 = x + length - 1;
@@ -275,7 +283,7 @@ void MiniGrafx::drawHorizontalLine(int16_t x, int16_t y, int16_t length)
       }
   }
 
-void MiniGrafx::drawVerticalLine(int16_t x, int16_t y, int16_t length)
+void mdGrafx::drawVerticalLine(int16_t x, int16_t y, int16_t length)
   {
     for (int16_t i = 0; i < length; i++)
       {
@@ -283,9 +291,9 @@ void MiniGrafx::drawVerticalLine(int16_t x, int16_t y, int16_t length)
       }
   }
 
-uint16_t MiniGrafx::drawString(int16_t xMove, int16_t yMove, String strUser)
+uint16_t mdGrafx::drawString(int16_t xMove, int16_t yMove, String strUser, TEXT_ALIGNMENT alignment)
   {
-    uint16_t lineHeight = readFontData(fontData, HEIGHT_POS);
+    uint16_t lineHeight = readFontData(_fontData, HEIGHT_POS);
 
     // char* text must be freed!
     char* text = utf8ascii(strUser);
@@ -293,7 +301,7 @@ uint16_t MiniGrafx::drawString(int16_t xMove, int16_t yMove, String strUser)
     uint16_t yOffset = 0;
     // If the string should be centered vertically too
     // we need to now how heigh the string is.
-    if (textAlignment == TXT_ALIGN_CENTER_BOTH)
+    if (_textAlignment == alignment)
       {
         uint16_t lb = 0;
         // Find number of linebreaks in text
@@ -321,10 +329,10 @@ uint16_t MiniGrafx::drawString(int16_t xMove, int16_t yMove, String strUser)
     return stringWidth;
   }
 
-void MiniGrafx::drawStringMaxWidth(int16_t xMove, int16_t yMove, uint16_t maxLineWidth, String strUser)
+void mdGrafx::drawStringLineBreak(int16_t xMove, int16_t yMove, uint16_t maxLineWidth, String strUser)
   {
-    uint16_t firstChar  = readFontData(fontData, FIRST_CHAR_POS);
-    uint16_t lineHeight = readFontData(fontData, HEIGHT_POS);
+    uint16_t firstChar  = readFontData(_fontData, FIRST_CHAR_POS);
+    uint16_t lineHeight = readFontData(_fontData, HEIGHT_POS);
 
     char* text = utf8ascii(strUser);
 
@@ -338,7 +346,7 @@ void MiniGrafx::drawStringMaxWidth(int16_t xMove, int16_t yMove, uint16_t maxLin
 
     for (uint16_t i = 0; i < length; i++)
       {
-        strWidth += readFontData(fontData, JUMPTABLE_START + (text[i] - firstChar) * JUMPTABLE_BYTES + JUMPTABLE_WIDTH);
+        strWidth += readFontData(_fontData, JUMPTABLE_START + (text[i] - firstChar) * JUMPTABLE_BYTES + JUMPTABLE_WIDTH);
 
         // Always try to break on a space or dash
         if (text[i] == ' ' || text[i]== '-' || text[i] == '\n')
@@ -372,16 +380,69 @@ void MiniGrafx::drawStringMaxWidth(int16_t xMove, int16_t yMove, uint16_t maxLin
     free(text);
   }
 
-void MiniGrafx::drawStringInternal(int16_t xMove, int16_t yMove, char* text, uint16_t textLength, uint16_t textWidth)
+void mdGrafx::drawStringMaxWidth(int16_t xMove, int16_t yMove, uint16_t maxLineWidth, String strUser)
   {
-    uint8_t textHeight       = readFontData(fontData, HEIGHT_POS);
-    uint8_t firstChar        = readFontData(fontData, FIRST_CHAR_POS);
-    uint16_t sizeOfJumpTable = readFontData(fontData, CHAR_NUM_POS)  * JUMPTABLE_BYTES;
+    uint16_t firstChar  = readFontData(_fontData, FIRST_CHAR_POS);
+    uint16_t lineHeight = readFontData(_fontData, HEIGHT_POS);
+
+    char* text = utf8ascii(strUser);
+
+    uint16_t length = strlen(text);
+    uint16_t lastDrawnPos = 0;
+    uint16_t lineNumber = 0;
+    uint16_t strWidth = 0;
+
+    uint16_t preferredBreakpoint = 0;
+    uint16_t widthAtBreakpoint = 0;
+
+    for (uint16_t i = 0; i < length; i++)
+      {
+        strWidth += readFontData(_fontData, JUMPTABLE_START + (text[i] - firstChar) * JUMPTABLE_BYTES + JUMPTABLE_WIDTH);
+
+        // Always try to break on a space or dash
+          /*
+            if (text[i] == ' ' || text[i]== '-' || text[i] == '\n')
+              {
+                preferredBreakpoint = i;
+                widthAtBreakpoint = strWidth;
+              }
+          */
+        //if (strWidth >= maxLineWidth || text[i] == '\n')
+        if (strWidth >= maxLineWidth)
+          {
+            //if (preferredBreakpoint == 0)
+              //{
+                preferredBreakpoint = i;
+                widthAtBreakpoint = strWidth;
+              //}
+            drawStringInternal(xMove, yMove + (lineNumber++) * lineHeight , &text[lastDrawnPos], preferredBreakpoint - lastDrawnPos, widthAtBreakpoint);
+            lastDrawnPos = preferredBreakpoint + 1;
+            // It is possible that we did not draw all letters to i so we need
+            // to account for the width of the chars from `i - preferredBreakpoint`
+            // by calculating the width we did not draw yet.
+            strWidth = strWidth - widthAtBreakpoint;
+            preferredBreakpoint = 0;
+          }
+      }
+
+    // Draw last part if needed
+    if (lastDrawnPos < length) {
+      drawStringInternal(xMove, yMove + lineNumber * lineHeight , &text[lastDrawnPos], length - lastDrawnPos, getStringWidth(&text[lastDrawnPos], length - lastDrawnPos));
+    }
+
+    free(text);
+  }
+
+void mdGrafx::drawStringInternal(int16_t xMove, int16_t yMove, char* text, uint16_t textLength, uint16_t textWidth)
+  {
+    uint8_t textHeight       = readFontData(_fontData, HEIGHT_POS);
+    uint8_t firstChar        = readFontData(_fontData, FIRST_CHAR_POS);
+    uint16_t sizeOfJumpTable = readFontData(_fontData, CHAR_NUM_POS)  * JUMPTABLE_BYTES;
 
     uint16_t cursorX         = 0;
     uint16_t cursorY         = 0;
 
-    switch (textAlignment)
+    switch (_textAlignment)
       {
         case TXT_ALIGN_LEFT:
           break;
@@ -397,8 +458,8 @@ void MiniGrafx::drawStringInternal(int16_t xMove, int16_t yMove, char* text, uin
       }
 
     // Don't draw anything if it is not on the screen.
-    if (xMove + textWidth  < 0 || xMove > this->width ) {return;}
-    if (yMove + textHeight < 0 || yMove > this->height) {return;}
+    if (xMove + textWidth  < 0 || xMove > this->_width ) {return;}
+    if (yMove + textHeight < 0 || yMove > this->_height) {return;}
 
     for (uint16_t j = 0; j < textLength; j++)
       {
@@ -410,17 +471,17 @@ void MiniGrafx::drawStringInternal(int16_t xMove, int16_t yMove, char* text, uin
           {
             byte charCode = code - firstChar;
             // 4 Bytes per char code
-            byte msbJumpToChar    = readFontData( fontData, JUMPTABLE_START + charCode * JUMPTABLE_BYTES );                  // MSB  \ JumpAddress
-            byte lsbJumpToChar    = readFontData( fontData, JUMPTABLE_START + charCode * JUMPTABLE_BYTES + JUMPTABLE_LSB);   // LSB /
-            byte charByteSize     = readFontData( fontData, JUMPTABLE_START + charCode * JUMPTABLE_BYTES + JUMPTABLE_SIZE);  // Size
-            byte currentCharWidth = readFontData( fontData, JUMPTABLE_START + charCode * JUMPTABLE_BYTES + JUMPTABLE_WIDTH); // Width
+            byte msbJumpToChar    = readFontData( _fontData, JUMPTABLE_START + charCode * JUMPTABLE_BYTES );                  // MSB  \ JumpAddress
+            byte lsbJumpToChar    = readFontData( _fontData, JUMPTABLE_START + charCode * JUMPTABLE_BYTES + JUMPTABLE_LSB);   // LSB /
+            byte charByteSize     = readFontData( _fontData, JUMPTABLE_START + charCode * JUMPTABLE_BYTES + JUMPTABLE_SIZE);  // Size
+            byte currentCharWidth = readFontData( _fontData, JUMPTABLE_START + charCode * JUMPTABLE_BYTES + JUMPTABLE_WIDTH); // Width
 
             // Test if the char is drawable
             if (!(msbJumpToChar == 255 && lsbJumpToChar == 255))
               {
                 // Get the position of the char data
                 uint16_t charDataPosition = JUMPTABLE_START + sizeOfJumpTable + ((msbJumpToChar << 8) + lsbJumpToChar);
-                drawInternal(xPos, yPos, currentCharWidth, textHeight, fontData, charDataPosition, charByteSize);
+                drawInternal(xPos, yPos, currentCharWidth, textHeight, _fontData, charDataPosition, charByteSize);
               }
 
             cursorX += currentCharWidth;
@@ -428,32 +489,64 @@ void MiniGrafx::drawStringInternal(int16_t xMove, int16_t yMove, char* text, uin
       }
   }
 
-uint8_t MiniGrafx::readFontData(const char * start, uint32_t offset)
+void mdGrafx::drawStatus(String msg, int16_t wifiQual, int16_t y, const char* pfont, uint16_t col16, uint16_t backcol16)
   {
-    if (this->isPgmFont)
+    this->setColor(backcol16);
+    this->setFont(pfont);
+    this->fillRect(0,y-11,240,12);
+    this->setTextAlignment(TXT_ALIGN_LEFT);
+    this->setColor(col16);
+    this->drawString(0, y-10, msg);
+    if (wifiQual != 0)
+      {
+        if ((wifiQual <= -100) || (wifiQual >= 0))
+          {  wifiQual = -100; }
+        //gfx.setColor(MD16_BLACK);
+        //fillRect(206,310,40,12);
+        //setColor(MD16_WHITE);
+        this->setTextAlignment(TXT_ALIGN_RIGHT);
+        this->drawString(225, 309, String(wifiQual));
+        wifiQual = (wifiQual + 200)  / 2;
+        for (int8_t i = 0; i < 4; i++)
+          {
+            for (int8_t j = 0; j < 2 * (i + 1); j++)
+              {
+                if (wifiQual > i * 25 || j == 0)
+                  {
+                    this->setPixel(230 + 2 * i, 319 - j);
+                  }
+              }
+          }
+      }
+    this->commit();
+
+  }
+uint8_t mdGrafx::readFontData(const char * start, uint32_t offset)
+  {
+    if (this->_isPgmFont)
       {
         return pgm_read_byte(start + offset);
       }
       else
       {
-        fontFile.seek(offset, SeekSet);
-        return fontFile.read();
+        _fontFile.seek(offset, SeekSet);
+        return _fontFile.read();
       }
   }
 
-void MiniGrafx::setFont(const char *fontData)
+void mdGrafx::setFont(const char *fontData)
   {
-    this->isPgmFont = true;
-    fontFile.close();
-    this->fontData = fontData;
+    this->_isPgmFont = true;
+    _fontFile.close();
+    this->_fontData = fontData;
   }
 
-void MiniGrafx::setFontFile(String fileName)
+void mdGrafx::setFontFile(String fileName)
   {
-    this->isPgmFont = false;
-    fontFile.close();
-    fontFile = SPIFFS.open(fileName, "r");
-    if (!fontFile)
+    this->_isPgmFont = false;
+    _fontFile.close();
+    _fontFile = SPIFFS.open(fileName, "r");
+    if (!_fontFile)
       {
         Serial.println("Could not open font file " + fileName);
       }
@@ -463,9 +556,7 @@ void MiniGrafx::setFontFile(String fileName)
       }
   }
 
-
-// Code form http://playground.arduino.cc/Main/Utf8ascii
-uint8_t MiniGrafx::utf8ascii(byte ascii)
+uint8_t mdGrafx::utf8ascii(byte ascii)
   {
     static uint8_t LASTCHAR;
 
@@ -487,8 +578,7 @@ uint8_t MiniGrafx::utf8ascii(byte ascii)
     return  0; // otherwise: return zero, if character has to be ignored
   }
 
-// You need to free the char!
-char* MiniGrafx::utf8ascii(String str)
+char* mdGrafx::utf8ascii(String str)
   {
     uint16_t k = 0;
     uint16_t length = str.length() + 1;
@@ -517,45 +607,44 @@ char* MiniGrafx::utf8ascii(String str)
     return s;
   }
 
-void MiniGrafx::setTextAlignment(TEXT_ALIGNMENT textAlignment)
+void mdGrafx::setTextAlignment(TEXT_ALIGNMENT textAlignment)
   {
-    this->textAlignment = textAlignment;
+    this->_textAlignment = textAlignment;
   }
 
-uint16_t MiniGrafx::getStringWidth(const char* text, uint16_t length)
+uint16_t mdGrafx::getStringWidth(const char* text, uint16_t length)
   {
-    uint16_t firstChar        = readFontData(fontData, FIRST_CHAR_POS);
+    uint16_t firstChar        = readFontData(_fontData, FIRST_CHAR_POS);
 
     uint16_t stringWidth = 0;
     uint16_t maxWidth = 0;
 
     while (length--)
       {
-        stringWidth += readFontData(fontData, JUMPTABLE_START + (text[length] - firstChar) * JUMPTABLE_BYTES + JUMPTABLE_WIDTH);
+        stringWidth += readFontData(_fontData, JUMPTABLE_START + (text[length] - firstChar) * JUMPTABLE_BYTES + JUMPTABLE_WIDTH);
         if (text[length] == 10)
           {
             maxWidth = max(maxWidth, stringWidth);
             stringWidth = 0;
           }
       }
-
     return max(maxWidth, stringWidth);
   }
 
-void inline MiniGrafx::drawInternal(int16_t xMove, int16_t yMove, int16_t width, int16_t height, const char *data, uint16_t offset, uint16_t bytesInData)
+void inline mdGrafx::drawInternal(int16_t xMove, int16_t yMove, int16_t width, int16_t height, const char *data, uint16_t offset, uint16_t bytesInData)
   {
 
-    if (width < 0 || height < 0) return;
-    if (yMove + height < 0 || yMove > this->height)  return;
-    if (xMove + width  < 0 || xMove > this->width)   return;
+    if (_width < 0 || height < 0) return;
+    if (yMove + height < 0 || yMove > this->_height)  return;
+    if (xMove + width  < 0 || xMove > this->_width)   return;
 
     uint8_t  rasterHeight = 1 + ((height - 1) >> 3); // fast ceil(height / 8.0)
     int8_t   yOffset      = yMove & 7;
 
     bytesInData = bytesInData == 0 ? width * rasterHeight : bytesInData;
 
-    int16_t initYMove   = yMove;
-    int8_t  initYOffset = yOffset;
+    //int16_t initYMove   = yMove;
+    //int8_t  initYOffset = yOffset;
 
     uint8_t arrayHeight = (int) ceil(height / 8.0);
     for (uint16_t i = 0; i < bytesInData; i++) {
@@ -563,7 +652,7 @@ void inline MiniGrafx::drawInternal(int16_t xMove, int16_t yMove, int16_t width,
 
       for (int b = 0; b < 8; b++) {
         if(bitRead(currentByte, b)) {
-          uint16_t currentBit = i * 8 + b;
+          //uint16_t currentBit = i * 8 + b;
           uint16_t pixelX = (i / arrayHeight);
           uint16_t pixelY = (i % arrayHeight) * 8;
           setPixel(pixelX + xMove, pixelY + yMove + b);
@@ -574,132 +663,153 @@ void inline MiniGrafx::drawInternal(int16_t xMove, int16_t yMove, int16_t width,
     }
   }
 
-void MiniGrafx::setPixel(uint16_t xPos, uint16_t yPos)
+void mdGrafx::setPixel(uint16_t xPos, uint16_t yPos)
   {
     uint16_t x = xPos;
     uint16_t y = yPos;
-    if (isMirroredHorizontally) {
-      x = width - xPos;
-    }
-    if (isMirroredVertically) {
-      y = height - yPos;
-    }
-    if (x >= width || y >= height || x < 0 || y < 0 || color < 0 || color == transparentColor) return;
-    if (bitsPerPixel == 16) {
-      uint32_t pos = (x + y * width) << 1;
-      buffer[pos + 1] = color & 0xFF;
-      buffer[pos] = color >> 8;
-      return;
-    }
-    // bitsPerPixel: 8, pixPerByte: 1, 0  1 = 2^0
-    // bitsPerPixel: 4, pixPerByte: 2, 1  2 = 2^1
-    // bitsPerPixel  2, pixPerByte: 4, 2  4 = 2^2
-    // bitsPerPixel  1, pixPerByte: 8, 3  8 = 2^3
-    uint16_t pos = (y * width + x) >> bitShift;
-    if (pos > bufferSize) {
-      return;
-    }
+    if (_isMirroredHorizontally)
+      {
+        x = _width - xPos;
+      }
+    if (_isMirroredVertically)
+      {
+        y = _height - yPos;
+      }
+    if (x >= _width || y >= _height || x < 0 || y < 0 || _color < 0 || _color == _transparentColor)
+      { return; }
+    if (_bitsPerPixel == 16)
+      {
+        uint32_t pos = (x + y * _width) << 1;
+        _buffer[pos + 1] = _color & 0xFF;
+        _buffer[pos] = _color >> 8;
+        return;
+      }
+        // bitsPerPixel: 8, pixPerByte: 1, 0  1 = 2^0
+        // bitsPerPixel: 4, pixPerByte: 2, 1  2 = 2^1
+        // bitsPerPixel  2, pixPerByte: 4, 2  4 = 2^2
+        // bitsPerPixel  1, pixPerByte: 8, 3  8 = 2^3
+    uint16_t pos = (y * _width + x) >> _bitShift;
+    if (pos > _bufferSize)
+      { return; }
 
-    uint8_t shift = (x & (pixelsPerByte - 1)) * bitsPerPixel;
-    // x: 0 % 2 * 4 = 0
-    // x: 1 % 2 * 4 = 0
+    uint8_t shift = (x & (_pixelsPerByte - 1)) * _bitsPerPixel;
+      // x: 0 % 2 * 4 = 0
+      // x: 1 % 2 * 4 = 0
 
-    //uint8_t shift = ((x) % (pixelsPerByte)) * bitsPerPixel;
-    //uint8_t shift = 0;
-    uint8_t mask = bitMask << shift;
-    uint8_t palColor = color;
+      //uint8_t shift = ((x) % (pixelsPerByte)) * bitsPerPixel;
+      //uint8_t shift = 0;
+    uint8_t mask = _bitMask << shift;
+    uint8_t palColor = _color;
     palColor = palColor << shift;
-    buffer[pos] = (buffer[pos] & ~mask) | (palColor & mask);
+    _buffer[pos] = (_buffer[pos] & ~mask) | (palColor & mask);
   }
 
-uint16_t MiniGrafx::getPixel(uint16_t x, uint16_t y)
+uint16_t mdGrafx::getPixel(uint16_t x, uint16_t y)
   {
-    if (x >= width || y >= height || x < 0 || y < 0 || color < 0 || color > 15) return 0;
+    if (x >= _width || y >= _height || x < 0 || y < 0 || _color < 0 || _color > 15) return 0;
     // bitsPerPixel: 8, pixPerByte: 1, 0  1 = 2^0
     // bitsPerPixel: 4, pixPerByte: 2, 1  2 = 2^1
     // bitsPerPixel  2, pixPerByte: 4, 2  4 = 2^2
     // bitsPerPixel  1, pixPerByte: 8, 3  8 = 2^3
-    uint16_t pos = (y * width + x) >> bitShift;
-    if (pos > bufferSize) {
+    uint16_t pos = (y * _width + x) >> _bitShift;
+    if (pos > _bufferSize) {
       return 0;
     }
 
-    uint8_t shift = (x & (pixelsPerByte - 1)) * bitsPerPixel;
+    uint8_t shift = (x & (_pixelsPerByte - 1)) * _bitsPerPixel;
 
-    return (buffer[pos] >> shift) & bitMask;
+    return (_buffer[pos] >> shift) & _bitMask;
   }
 
-void MiniGrafx::fillBuffer(uint8_t pal)
+uint16_t mdGrafx::read16(File &f)
+  {
+    uint16_t result;
+    ((uint8_t *)&result)[0] = f.read(); // LSB
+    ((uint8_t *)&result)[1] = f.read(); // MSB
+    return result;
+  }
+
+uint32_t mdGrafx::read32(File &f)
+  {
+    uint32_t result;
+    ((uint8_t *)&result)[0] = f.read(); // LSB
+    ((uint8_t *)&result)[1] = f.read();
+    ((uint8_t *)&result)[2] = f.read();
+    ((uint8_t *)&result)[3] = f.read(); // MSB
+    return result;
+  }
+
+void mdGrafx::fillBuffer(uint8_t pal)
   {
       uint8_t byteCol = pal;
-      for (int i = 0; i < pixelsPerByte; i++) {
-        byteCol |= (pal << (bitsPerPixel * i));
+      for (int i = 0; i < _pixelsPerByte; i++) {
+        byteCol |= (pal << (_bitsPerPixel * i));
       }
-      memset(buffer, byteCol, bufferSize);
+      memset(_buffer, byteCol, _bufferSize);
   }
 
-void MiniGrafx::clear()
+void mdGrafx::clear()
   {
     this->fillBuffer(0);
   }
 
-void MiniGrafx::commit()
+void mdGrafx::commit()
   {
     BufferInfo bufferInfo;
-    bufferInfo.buffer = this->buffer;
-    bufferInfo.bitsPerPixel = this->bitsPerPixel;
-    bufferInfo.palette = this->palette;
+    bufferInfo.buffer = this->_buffer;
+    bufferInfo.bitsPerPixel = this->_bitsPerPixel;
+    bufferInfo.palette = this->_palette;
     bufferInfo.targetX = 0;
     bufferInfo.targetY = 0;
-    bufferInfo.bufferWidth = this->width;
-    bufferInfo.bufferHeight = this->height;
+    bufferInfo.bufferWidth = this->_width;
+    bufferInfo.bufferHeight = this->_height;
     bufferInfo.windowX = 0;
     bufferInfo.windowY = 0;
-    bufferInfo.windowWidth = this->width;
-    bufferInfo.windowHeight = this->height;
-    this->driver->writeBuffer(&bufferInfo);
+    bufferInfo.windowWidth = this->_width;
+    bufferInfo.windowHeight = this->_height;
+    this->_pdriver->writeBuffer(&bufferInfo);
   }
 
-void MiniGrafx::commit(uint16_t xPos, uint16_t yPos)
+void mdGrafx::commit(uint16_t xPos, uint16_t yPos)
   {
     BufferInfo bufferInfo;
-    bufferInfo.buffer = this->buffer;
-    bufferInfo.bitsPerPixel = this->bitsPerPixel;
-    bufferInfo.palette = this->palette;
+    bufferInfo.buffer = this->_buffer;
+    bufferInfo.bitsPerPixel = this->_bitsPerPixel;
+    bufferInfo.palette = this->_palette;
     bufferInfo.targetX = xPos;
     bufferInfo.targetY = yPos;
-    bufferInfo.bufferWidth = this->width;
-    bufferInfo.bufferHeight = this->height;
+    bufferInfo.bufferWidth = this->_width;
+    bufferInfo.bufferHeight = this->_height;
     bufferInfo.windowX = 0;
     bufferInfo.windowY = 0;
-    bufferInfo.windowWidth = this->width;
-    bufferInfo.windowHeight = this->height;
-    this->driver->writeBuffer(&bufferInfo);
+    bufferInfo.windowWidth = this->_width;
+    bufferInfo.windowHeight = this->_height;
+    this->_pdriver->writeBuffer(&bufferInfo);
   }
 
-void MiniGrafx::commit(uint16_t srcXPos, uint16_t srcYPos, uint16_t srcWidth, uint16_t srcHeight, uint16_t targetXPos, uint16_t targetYPos)
+void mdGrafx::commit(uint16_t srcXPos, uint16_t srcYPos, uint16_t srcWidth, uint16_t srcHeight, uint16_t targetXPos, uint16_t targetYPos)
   {
     BufferInfo bufferInfo;
-    bufferInfo.buffer = this->buffer;
-    bufferInfo.bitsPerPixel = this->bitsPerPixel;
-    bufferInfo.palette = this->palette;
+    bufferInfo.buffer = this->_buffer;
+    bufferInfo.bitsPerPixel = this->_bitsPerPixel;
+    bufferInfo.palette = this->_palette;
     bufferInfo.targetX = targetXPos;
     bufferInfo.targetY = targetYPos;
-    bufferInfo.bufferWidth = this->width;
-    bufferInfo.bufferHeight = this->height;
+    bufferInfo.bufferWidth = this->_width;
+    bufferInfo.bufferHeight = this->_height;
     bufferInfo.windowX = srcXPos;
     bufferInfo.windowY = srcXPos;
     bufferInfo.windowWidth = srcWidth;
     bufferInfo.windowHeight = srcHeight;
-    this->driver->writeBuffer(&bufferInfo);
+    this->_pdriver->writeBuffer(&bufferInfo);
   }
 
-void MiniGrafx::setFastRefresh(boolean isFastRefreshEnabled)
+void mdGrafx::setFastRefresh(boolean isFastRefreshEnabled)
   {
-    this->driver->setFastRefresh(isFastRefreshEnabled);
+    this->_pdriver->setFastRefresh(isFastRefreshEnabled);
   }
 
-void MiniGrafx::drawXbm(int16_t xMove, int16_t yMove, int16_t width, int16_t height, const char *xbm)
+void mdGrafx::drawXbm(int16_t xMove, int16_t yMove, int16_t width, int16_t height, const char *xbm)
   {
     int16_t widthInXbm = (width + 7) >> 3;
     uint8_t data = 0;
@@ -719,7 +829,7 @@ void MiniGrafx::drawXbm(int16_t xMove, int16_t yMove, int16_t width, int16_t hei
     }
   }
 
-void MiniGrafx::drawBmpFromFile(String filename, uint8_t xMove, uint16_t yMove)
+void mdGrafx::drawBmpFromFile(String filename, uint8_t xMove, uint16_t yMove)
   {
     Serial.println("In drawBmpFromFile");
     File     bmpFile;
@@ -727,21 +837,21 @@ void MiniGrafx::drawBmpFromFile(String filename, uint8_t xMove, uint16_t yMove)
     uint8_t  bmpDepth;              // Bit depth (currently must be 24)
     uint32_t bmpImageoffset;        // Start of image data in file
     uint32_t rowSize;               // Not always = bmpWidth; may have padding
-    uint8_t  sdbuffer[3*20]; // pixel buffer (R+G+B per pixel)
-    uint8_t  buffidx = sizeof(sdbuffer); // Current position in sdbuffer
+    uint8_t  sd_buffer[3*20]; // pixel _buffer (R+G+B per pixel)
+    uint8_t  buffidx = sizeof(sd_buffer); // Current position in sd_buffer
     boolean  goodBmp = false;       // Set to true on valid header parse
     boolean  flip    = true;        // BMP is stored bottom-to-top
     int      w, h, row, col;
     uint8_t  r, g, b;
     uint32_t pos = 0, startTime = millis();
-    uint16_t paletteRGB[1 << bitsPerPixel][3];
-    for (int i = 0; i < 1 << bitsPerPixel; i++) {
-      paletteRGB[i][0] = 255 * (palette[i] & 0xF800 >> 11) / 31;
-      paletteRGB[i][1] = 255 * (palette[i] & 0x7E0 >> 5) / 63;
-      paletteRGB[i][2] = 255 * (palette[i] & 0x1F) / 31;
+    uint16_t paletteRGB[1 << _bitsPerPixel][3];
+    for (int i = 0; i < 1 << _bitsPerPixel; i++) {
+      paletteRGB[i][0] = 255 * (_palette[i] & 0xF800 >> 11) / 31;
+      paletteRGB[i][1] = 255 * (_palette[i] & 0x7E0 >> 5) / 63;
+      paletteRGB[i][2] = 255 * (_palette[i] & 0x1F) / 31;
     }
 
-    if((xMove >= width) || (yMove >= height)) return;
+    if((xMove >= _width) || (yMove >= _height)) return;
 
     /*Serial.println();
     Serial.print(F("Loading image '"));
@@ -794,8 +904,8 @@ void MiniGrafx::drawBmpFromFile(String filename, uint8_t xMove, uint16_t yMove)
           // Crop area to be loaded
           w = bmpWidth;
           h = bmpHeight;
-          if((xMove+w-1) >= width)  w = width  - xMove;
-          if((yMove+h-1) >= height) h = height - yMove;
+          if((xMove+w-1) >= _width)  w = _width  - xMove;
+          if((yMove+h-1) >= _height) h = _height - yMove;
 
           if ((bmpDepth == 24)) {
 
@@ -813,23 +923,23 @@ void MiniGrafx::drawBmpFromFile(String filename, uint8_t xMove, uint16_t yMove)
                 pos = bmpImageoffset + row * rowSize;
               if(bmpFile.position() != pos) { // Need seek?
                 bmpFile.seek(pos, SeekSet);
-                buffidx = sizeof(sdbuffer); // Force buffer reload
+                buffidx = sizeof(sd_buffer); // Force _buffer reload
               }
 
               for (col=0; col<w; col++) { // For each pixel...
                 // Time to read more pixel data?
-                if (buffidx >= sizeof(sdbuffer)) { // Indeed
-                  bmpFile.read(sdbuffer, sizeof(sdbuffer));
+                if (buffidx >= sizeof(sd_buffer)) { // Indeed
+                  bmpFile.read(sd_buffer, sizeof(sd_buffer));
                   buffidx = 0; // Set index to beginning
                 }
 
                 // Convert pixel from BMP to TFT format, push to display
-                b = sdbuffer[buffidx++];
-                g = sdbuffer[buffidx++];
-                r = sdbuffer[buffidx++];
+                b = sd_buffer[buffidx++];
+                g = sd_buffer[buffidx++];
+                r = sd_buffer[buffidx++];
 
                 uint32_t minDistance = 99999999L;
-                for (int i = 0; i < (1 << bitsPerPixel); i++) {
+                for (int i = 0; i < (1 << _bitsPerPixel); i++) {
                   int16_t rd = (r-paletteRGB[i][0]);
                   int16_t gd = (g-paletteRGB[i][1]);
                   int16_t bd = (b-paletteRGB[i][2]);
@@ -856,27 +966,27 @@ void MiniGrafx::drawBmpFromFile(String filename, uint8_t xMove, uint16_t yMove)
     if(!goodBmp) Serial.println(F("BMP format not recognized."));
   }
 
-void MiniGrafx::drawBmpFromPgm(const char *bmp, uint8_t x, uint16_t y)
+void mdGrafx::drawBmpFromPgm(const char *bmp, uint8_t x, uint16_t y)
   {
     uint32_t bmpWidth, bmpHeight;   // W+H in pixels
     uint16_t bmpDepth;              // Bit depth (currently must be 24)
     uint32_t bmpImageoffset;        // Start of image data in file
     uint32_t rowSize;               // Not always = bmpWidth; may have padding
-    uint8_t  sdbuffer[3*80]; // pixel buffer (R+G+B per pixel)
-    uint8_t  buffidx = sizeof(sdbuffer); // Current position in sdbuffer
+    uint8_t  sd_buffer[3*80]; // pixel _buffer (R+G+B per pixel)
+    uint8_t  buffidx = sizeof(sd_buffer); // Current position in sd_buffer
     boolean  goodBmp = false;       // Set to true on valid header parse
     boolean  flip    = false;        // BMP is stored bottom-to-top
     uint32_t      w, h, row, col;
     uint8_t  r, g, b;
 
     uint32_t pos = 0, startTime = millis();
-    uint16_t numberOfColors = bitsPerPixel == 16 ? 0 : 1 << bitsPerPixel;
+    uint16_t numberOfColors = _bitsPerPixel == 16 ? 0 : 1 << _bitsPerPixel;
     uint16_t paletteRGB[numberOfColors][3];
 
     for (int i = 0; i < numberOfColors; i++) {
-      paletteRGB[i][0] = 255 * (palette[i] & 0xF800 >> 11) / 31;
-      paletteRGB[i][1] = 255 * (palette[i] & 0x7E0 >> 5) / 63;
-      paletteRGB[i][2] = 255 * (palette[i] & 0x1F) / 31;
+      paletteRGB[i][0] = 255 * (_palette[i] & 0xF800 >> 11) / 31;
+      paletteRGB[i][1] = 255 * (_palette[i] & 0x7E0 >> 5) / 63;
+      paletteRGB[i][2] = 255 * (_palette[i] & 0x1F) / 31;
     }
 
     //if((x >= width) || (y >= height)) return;
@@ -962,32 +1072,32 @@ void MiniGrafx::drawBmpFromPgm(const char *bmp, uint8_t x, uint16_t y)
               pos = bmpImageoffset + row * rowSize;*/
             /*if(bmpFile.position() != pos) { // Need seek?
               bmpFile.seek(pos, SeekSet);
-              buffidx = sizeof(sdbuffer); // Force buffer reload
+              buffidx = sizeof(sd_buffer); // Force _buffer reload
             }*/
 
             for (col=0; col<w; col++) { // For each pixel...
 
               // Time to read more pixel data?
-              if (buffidx >= sizeof(sdbuffer)) { // Indeed
-                //bmpFile.read(sdbuffer, sizeof(sdbuffer));
-                memcpy_P(sdbuffer, bmp + dataPointer, sizeof(sdbuffer));
-                dataPointer += sizeof(sdbuffer);
+              if (buffidx >= sizeof(sd_buffer)) { // Indeed
+                //bmpFile.read(sd_buffer, sizeof(sd_buffer));
+                memcpy_P(sd_buffer, bmp + dataPointer, sizeof(sd_buffer));
+                dataPointer += sizeof(sd_buffer);
                 buffidx = 0; // Set index to beginning
               }
 
               // Convert pixel from BMP to TFT format, push to display
-              b = sdbuffer[buffidx++];
-              g = sdbuffer[buffidx++];
-              r = sdbuffer[buffidx++];
+              b = sd_buffer[buffidx++];
+              g = sd_buffer[buffidx++];
+              r = sd_buffer[buffidx++];
 
-              if (bitsPerPixel == 16) {
+              if (_bitsPerPixel == 16) {
                 uint16_t color = ((g & 0xF8) << 8) | ((b & 0xFC) << 3) | (r >> 3);
                 setColor(color);
               } else {
                 uint16_t color = (b + g + r) / (3 * 16);
                 setColor(color);
                 uint32_t minDistance = 99999999L;
-                for (int i = 0; i < (1 << bitsPerPixel); i++) {
+                for (int i = 0; i < (1 << _bitsPerPixel); i++) {
                   int16_t rd = (r-paletteRGB[i][0]) * 30;
                   int16_t gd = (g-paletteRGB[i][1]) * 59;
                   int16_t bd = (b-paletteRGB[i][2]) * 11;
@@ -1016,15 +1126,39 @@ void MiniGrafx::drawBmpFromPgm(const char *bmp, uint8_t x, uint16_t y)
     if(!goodBmp) Serial.println(F("BMP format not recognized."));
   }
 
-void MiniGrafx::drawPalettedBitmapFromPgm(uint16_t xMove, uint16_t yMove, const char *palBmp)
+void mdGrafx::getPalBitmapHeadFromPgm(BMPHeader_t* phead, const char *palBmp)
+  {
+    if (phead && palBmp)
+      {
+        phead->version  = pgm_read_byte(palBmp);
+        phead->bitDepth = pgm_read_byte(palBmp + 1);
+        phead->width    = pgm_read_byte(palBmp + 2) << 8 | pgm_read_byte(palBmp + 3);
+        phead->height   = pgm_read_byte(palBmp + 4) << 8 | pgm_read_byte(palBmp + 5);
+          /*
+            SOUT(" grafx phead "); SOUTHEX((uint32_t) phead);
+            SOUT(" bmp "); SOUTHEX((uint32_t) palBmp);
+            SOUT(" "); SOUTHEX(phead->width);
+            SOUT(" "); SOUTHEX(phead->version);
+            SOUT(" "); SOUTHEX(phead->bitDepth);
+            SOUT(" "); SOUTHEXLN(phead->height);
+          */
+      }
+    //SOUTLN();
+  }
+
+void mdGrafx::drawPalettedBitmapFromPgm(uint16_t xMove, uint16_t yMove, const char *palBmp)
   {
     uint8_t version = pgm_read_byte(palBmp);
-    uint8_t bmpBitDepth = pgm_read_byte(palBmp + 1);
-    if (bmpBitDepth != bitsPerPixel) {
-      Serial.println("Bmp has wrong bit depth");
-      return;
-    }
-    uint16_t width = pgm_read_byte(palBmp + 2) << 8 | pgm_read_byte(palBmp + 3);
+    uint8_t bmpBitDepth = pgm_read_byte(palBmp + 1); // = 2
+    uint8_t pixPerByte  = 8 / bmpBitDepth;           // = 4
+    /*
+        if (bmpBitDepth != bitsPerPixel)
+          {
+            Serial.println("Bmp has wrong bit depth");
+            return;
+          }
+      */
+    uint16_t width  = pgm_read_byte(palBmp + 2) << 8 | pgm_read_byte(palBmp + 3);
     uint16_t height = pgm_read_byte(palBmp + 4) << 8 | pgm_read_byte(palBmp + 5);
 
     int16_t widthRoundedUp = (width + 7) & ~7;
@@ -1032,40 +1166,45 @@ void MiniGrafx::drawPalettedBitmapFromPgm(uint16_t xMove, uint16_t yMove, const 
     uint8_t data;
     uint8_t paletteIndex = 0;
     uint32_t pointer = CUSTOM_BITMAP_DATA_START;
-    // bitdepth = 8, initialShift = 0
-    // bitdepth = 4, initialShift = 4
-    // bitdepth = 2, initialShift = 6
-    // bitdepth = 1, initialShift = 7
-    uint8_t shift = 8 - bitsPerPixel;
+      // bitdepth = 8, initialShift = 0
+      // bitdepth = 4, initialShift = 4
+      // bitdepth = 2, initialShift = 6
+      // bitdepth = 1, initialShift = 7
+    uint16_t locMask = bmpBitDepth^2 - 1;   // 2->0x0003; 4->0x000F; 8->0x00FF
+      //uint8_t shift = 8 - bitsPerPixel;
+    uint8_t shift = 8 - bmpBitDepth;
     data = pgm_read_byte(palBmp + pointer);
     uint8_t bitCounter = 0;
-    for(int16_t y = 0; y < height; y++) {
-      for(int16_t x = 0; x < width; x++ ) {
+    for(int16_t y = 0; y < height; y++)
+      {
+        for(int16_t x = 0; x < width; x++ )
+          {
+            //if (bitCounter == pixelsPerByte || bitCounter == 0)
+            if ( (bitCounter == pixPerByte) || (bitCounter == 0) ) // bC = 0 ;
+              {
+                //Serial.println("Reading new data");
+                data = pgm_read_byte(palBmp + pointer);
+                pointer++;
+                bitCounter = 0;
+              }
+            //shift = 8 - (bitCounter + 1) * bitsPerPixel;
+            shift = 8 - (bitCounter + 1) * bmpBitDepth;
+            //paletteIndex = (data >> shift) & bitMask;
+            paletteIndex = (data >> shift) & locMask;
 
-        if (bitCounter == pixelsPerByte || bitCounter == 0) {
-          //Serial.println("Reading new data");
-          data = pgm_read_byte(palBmp + pointer);
-          pointer++;
-          //shift = bitsPerPixel;
-          bitCounter = 0;
-        }
-        shift = 8 - (bitCounter + 1) * bitsPerPixel;
-        paletteIndex = (data >> shift) & bitMask;
-
-        //Serial.println(String(x) + ", " + String(y) + ": Pointer:" + String(pointer) + ", data:" + String(data) + ", Bit:" + String(bitCounter) + ", Shift:" + String(shift) + ", IDX:" + String(paletteIndex));
-        //Serial.println(paletteIndex);
-        // if there is a bit draw it
-        setColor(paletteIndex);
-        setPixel(xMove + x, yMove + y);
-        bitCounter++;
+            //Serial.println(String(x) + ", " + String(y) + ": Pointer:" + String(pointer) + ", data:" + String(data) + ", Bit:" + String(bitCounter) + ", Shift:" + String(shift) + ", IDX:" + String(paletteIndex));
+            //Serial.println(paletteIndex);
+            // if there is a bit draw it
+            setColor(paletteIndex);
+            setPixel(xMove + x, yMove + y);
+            bitCounter++;
+          }
+        //pointer++;
+        bitCounter = 0;
       }
-      //pointer++;
-      bitCounter = 0;
-
-    }
   }
 
-void MiniGrafx::drawPalettedBitmapFromFile(uint16_t xMove, uint16_t yMove, String fileName)
+void mdGrafx::drawPalettedBitmapFromFile(uint16_t xMove, uint16_t yMove, String fileName)
   {
     Serial.println("Drawing " + fileName);
     File file = SPIFFS.open(fileName, "r");
@@ -1082,8 +1221,8 @@ void MiniGrafx::drawPalettedBitmapFromFile(uint16_t xMove, uint16_t yMove, Strin
     uint8_t bmpBitDepth = buf[1];
     Serial.println("Version:" + String(version));
     Serial.println("BitDepth:" + String(bmpBitDepth));
-    if (bmpBitDepth != bitsPerPixel) {
-      Serial.printf("Bmp has wrong bit depth. Device: %d, bmp: %d\n", bitsPerPixel, bmpBitDepth);
+    if (bmpBitDepth != _bitsPerPixel) {
+      Serial.printf("Bmp has wrong bit depth. Device: %d, bmp: %d\n", _bitsPerPixel, bmpBitDepth);
       return;
     }
     uint16_t width = buf[2] << 8 | buf[3];
@@ -1102,14 +1241,14 @@ void MiniGrafx::drawPalettedBitmapFromFile(uint16_t xMove, uint16_t yMove, Strin
     // bitdepth = 4, initialShift = 4
     // bitdepth = 2, initialShift = 6
     // bitdepth = 1, initialShift = 7
-    uint8_t shift = 8 - bitsPerPixel;
+    uint8_t shift = 8 - _bitsPerPixel;
 
     uint8_t bitCounter = 0;
 
     for(int16_t y = 0; y < height; y++) {
       for(int16_t x = 0; x < width; x++ ) {
 
-        if (bitCounter == pixelsPerByte || bitCounter == 0) {
+        if (bitCounter == _pixelsPerByte || bitCounter == 0) {
           if (fileSize > 0) {
             file.readBytes(buf, 1);
             fileSize--;
@@ -1120,8 +1259,8 @@ void MiniGrafx::drawPalettedBitmapFromFile(uint16_t xMove, uint16_t yMove, Strin
           //shift = bitsPerPixel;
           bitCounter = 0;
         }
-        shift = 8 - (bitCounter + 1) * bitsPerPixel;
-        paletteIndex = (data >> shift) & bitMask;
+        shift = 8 - (bitCounter + 1) * _bitsPerPixel;
+        paletteIndex = (data >> shift) & _bitMask;
 
         // if there is a bit draw it
         setColor(paletteIndex);
@@ -1135,25 +1274,7 @@ void MiniGrafx::drawPalettedBitmapFromFile(uint16_t xMove, uint16_t yMove, Strin
     }
   }
 
-uint16_t MiniGrafx::read16(File &f)
-  {
-    uint16_t result;
-    ((uint8_t *)&result)[0] = f.read(); // LSB
-    ((uint8_t *)&result)[1] = f.read(); // MSB
-    return result;
-  }
-
-uint32_t MiniGrafx::read32(File &f)
-  {
-    uint32_t result;
-    ((uint8_t *)&result)[0] = f.read(); // LSB
-    ((uint8_t *)&result)[1] = f.read();
-    ((uint8_t *)&result)[2] = f.read();
-    ((uint8_t *)&result)[3] = f.read(); // MSB
-    return result;
-  }
-
-void MiniGrafx::fillBottomFlatTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3)
+void mdGrafx::fillBottomFlatTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3)
   {
     float invslope1 = (x2 - x1) / ((float)(y2 - y1));
     float invslope2 = (x3 - x1) / ((float)(y3 - y1));
@@ -1170,7 +1291,7 @@ void MiniGrafx::fillBottomFlatTriangle(uint16_t x1, uint16_t y1, uint16_t x2, ui
     }
   }
 
-void MiniGrafx::fillTopFlatTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3)
+void mdGrafx::fillTopFlatTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3)
   {
     float invslope1 = (x3 - x1) / ((float) (y3 - y1));
     float invslope2 = (x3 - x2) / ((float) (y3 - y2));
@@ -1187,7 +1308,7 @@ void MiniGrafx::fillTopFlatTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint1
     }
   }
 
-void MiniGrafx::fillTriangle(uint16_t x1In, uint16_t y1In, uint16_t x2In, uint16_t y2In, uint16_t x3In, uint16_t y3In)
+void mdGrafx::fillTriangle(uint16_t x1In, uint16_t y1In, uint16_t x2In, uint16_t y2In, uint16_t x3In, uint16_t y3In)
   {
      /* at first sort the three vertices by y-coordinate ascending so v1 is the topmost vertice */
     int x[] = {x1In, x2In, x3In};
@@ -1226,15 +1347,14 @@ void MiniGrafx::fillTriangle(uint16_t x1In, uint16_t y1In, uint16_t x2In, uint16
     }
   }
 
-void MiniGrafx::drawTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3)
+void mdGrafx::drawTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3)
   {
     drawLine(x1, y1, x2, y2);
     drawLine(x2, y2, x3, y3);
     drawLine(x3, y3, x1, y1);
   }
 
-//swaps the colors in the given rectangle
-void MiniGrafx::colorSwap(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color1, uint16_t color2)
+void mdGrafx::colorSwap(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color1, uint16_t color2)
   {
      uint16_t pix;
     for (int y=y1; y<y2; y++){
@@ -1252,12 +1372,12 @@ void MiniGrafx::colorSwap(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, ui
     }
   }
 
-void MiniGrafx::setMirroredHorizontally(boolean isMirroredHorizontally)
+void mdGrafx::setMirroredHorizontally(boolean isMirroredHorizontally)
   {
-    this->isMirroredHorizontally = isMirroredHorizontally;
+    this->_isMirroredHorizontally = isMirroredHorizontally;
   }
 
-void MiniGrafx::setMirroredVertically(boolean isMirroredVertically)
+void mdGrafx::setMirroredVertically(boolean isMirroredVertically)
   {
-    this->isMirroredVertically = isMirroredVertically;
+    this->_isMirroredVertically = isMirroredVertically;
   }

@@ -78,7 +78,6 @@ class DisplayDriver {
 
   uint8_t getRotation(void) const;
 
-
  protected:
   const int16_t
     WIDTH, HEIGHT;   // This is the 'raw' display w/h - never changes
