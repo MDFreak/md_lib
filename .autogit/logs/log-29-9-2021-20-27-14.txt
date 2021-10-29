@@ -1,0 +1,98 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 29 2021 20:27:14 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* .pio/build/az-delivery-devkit-v4/idedata.json
+* .pio/build/project.checksum
+* .vscode/c_cpp_properties.json
+* .vscode/launch.json
+* md_oled
+* md_touch
+* md_util
+* md_webserver
+* md_wifi
+* platformio.ini
+* src/test_md_LED.cpp
+* src/test_md_lib.h
+
+
+Created files:
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/.github/ISSUE_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/.github/PULL_REQUEST_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/.github/workflows/githubci.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/.gitignore"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/.piopm"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/Adafruit_NeoMatrix.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/Adafruit_NeoMatrix.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/COPYING"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/MatrixGFXDemo/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/MatrixGFXDemo/MatrixGFXDemo.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/MatrixGFXDemo/bluesmiley24.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/MatrixGFXDemo/google32.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/MatrixGFXDemo/heart24.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/MatrixGFXDemo/linux32.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/MatrixGFXDemo/smileytongue24.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/MatrixGFXDemo/yellowsmiley24.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/matrixtest/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/matrixtest/matrixtest.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/tiletest/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/examples/tiletest/tiletest.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/gamma.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoMatrix/library.properties"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/.github/ISSUE_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/.github/PULL_REQUEST_TEMPLATE.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/.github/workflows/githubci.yml"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/.gitignore"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/.piopm"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/Adafruit_NeoPixel.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/Adafruit_NeoPixel.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/CONTRIBUTING.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/COPYING"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/README.md"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/esp.c"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/esp8266.c"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/RGBWstrandtest/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/RGBWstrandtest/.trinket.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/RGBWstrandtest/RGBWstrandtest.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestArduinoBLE/.none.test.only"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestArduinoBLE/StrandtestArduinoBLE.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestArduinoBLECallback/.none.test.only"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestArduinoBLECallback/StrandtestArduinoBLECallback.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestBLE/.none.test.only"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestBLE/BLESerial.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestBLE/BLESerial.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestBLE/StrandtestBLE.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestBLE_nodelay/.none.test.only"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestBLE_nodelay/BLESerial.cpp"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestBLE_nodelay/BLESerial.h"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/StrandtestBLE_nodelay/StrandtestBLE_nodelay.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/buttoncycler/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/buttoncycler/buttoncycler.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/simple/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/simple/simple.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/simple_new_operator/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/simple_new_operator/simple_new_operator.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/strandtest/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/strandtest/strandtest.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/strandtest_nodelay/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/strandtest_nodelay/strandtest_nodelay.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/strandtest_wheel/.esp8266.test.skip"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/examples/strandtest_wheel/strandtest_wheel.ino"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/kendyte_k210.c"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/keywords.txt"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/library.properties"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/rp2040.c"
+* ".pio/libdeps/az-delivery-devkit-v4/Adafruit NeoPixel/rp2040_pio.h"
+* md_leds
+
+
+Deleted files:
+* .pio/build/az-delivery-devkit-v4/.sconsign37.dblite
+* .pio/build/az-delivery-devkit-v4/partitions.bin
+* .pio/build/az-delivery-devkit-v4/tmpp8i7eg1o.tmp
+* .pio/build/az-delivery-devkit-v4/tmpqmh7e2kc.tmp
+
+
+Renamed files:
