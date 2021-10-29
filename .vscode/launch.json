@@ -29,6 +29,16 @@
             "projectEnvName": "az-delivery-devkit-v4",
             "toolchainBinDir": "C:/Users/Martin/.platformio/packages/toolchain-xtensa32@2.50200.97/bin",
             "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (without uploading)",
+            "executable": "c:/Users/Martin/Documents/PlatformIO/Projects/md_lib/.pio/build/az-delivery-devkit-v4/firmware.elf",
+            "projectEnvName": "az-delivery-devkit-v4",
+            "toolchainBinDir": "C:/Users/Martin/.platformio/packages/toolchain-xtensa32@2.50200.97/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "loadMode": "manual"
         }
     ]
 }

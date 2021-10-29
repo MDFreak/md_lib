@@ -11,8 +11,8 @@
       //#define TEST_MD_KEYPADSHIELD
       //#define TEST_MD_TOUCH
       //#define TEST_MD_WEBSERVER
-      //#define TEST_MD_LED
-      #define TEST_MD_OLED
+      #define TEST_MD_LED
+      //#define TEST_MD_OLED
       //#define TEST_MD_FRAM
       //#define TEST_MD_WIFI
 

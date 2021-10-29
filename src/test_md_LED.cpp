@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
-#include "test_md_lib.h"
+#include <test_md_lib.h>
+#include <md_leds.h>
 
 #if defined(TEST_MD_LIB_ACTIVE)
   #if defined( TEST_MD_LED)
