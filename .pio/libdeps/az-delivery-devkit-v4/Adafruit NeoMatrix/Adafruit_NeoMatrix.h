@@ -170,7 +170,7 @@ public:
    */
   static uint16_t Color(uint8_t r, uint8_t g, uint8_t b);
 
-protected:
+private:
   const uint8_t type;
   const uint8_t matrixWidth, matrixHeight, tilesX, tilesY;
   uint16_t (*remapFn)(uint16_t x, uint16_t y);
