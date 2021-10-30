@@ -1,0 +1,26 @@
+-------------------- Auto-Git Log --------------------
+		Sat Oct 30 2021 19:29:33 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* .pio/build/project.checksum
+* md_leds
+* md_oled
+* md_touch
+* md_util
+* md_webserver
+* md_wifi
+* platformio.ini
+
+
+Created files:
+* .autogit/logs/log-30-9-2021-18-59-17.txt
+* .pio/build/az-delivery-devkit-v4/idedata.json
+
+
+Deleted files:
+* .pio/build/az-delivery-devkit-v4/.sconsign37.dblite
+* .pio/build/az-delivery-devkit-v4/partitions.bin
+
+
+Renamed files:
