@@ -521,7 +521,7 @@
             // line buffer is in 16bit target format
             uint8_t lineBuffer[_width * 2];
             //Serial
-            uint16_t pos;
+            //uint16_t pos;
             uint8_t bufferByte;
             uint8_t paletteEntry;
             uint16_t color;
@@ -529,8 +529,8 @@
             uint8_t mask = (1 << bitsPerPixel) - 1;
             uint8_t packagesPerBytes = 8 / bitsPerPixel;
             uint16_t bytePos = 0;
-            uint16_t pixelCounter = 0;
-            uint16_t bufferSize = bufferWidth * bufferHeight / packagesPerBytes;
+            //uint16_t pixelCounter = 0;
+            //uint16_t bufferSize = bufferWidth * bufferHeight / packagesPerBytes;
             uint8_t bytesPerLine = bufferWidth / packagesPerBytes;
             uint16_t x = 0;
             for (uint16_t y = 0; y < bufferHeight; y++)

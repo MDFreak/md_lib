@@ -639,7 +639,7 @@ void inline mdGrafx::drawInternal(int16_t xMove, int16_t yMove, int16_t width, i
     if (xMove + width  < 0 || xMove > this->_width)   return;
 
     uint8_t  rasterHeight = 1 + ((height - 1) >> 3); // fast ceil(height / 8.0)
-    int8_t   yOffset      = yMove & 7;
+    //int8_t   yOffset      = yMove & 7;
 
     bytesInData = bytesInData == 0 ? width * rasterHeight : bytesInData;
 
@@ -868,7 +868,7 @@ void mdGrafx::drawBmpFromFile(String filename, uint8_t xMove, uint16_t yMove)
     // Parse BMP header
     if(read16(bmpFile) == 0x4D42) { // BMP signature
       //Serial.print(F("File size: "));
-      uint32_t filesize = read32(bmpFile);
+      //uint32_t filesize = read32(bmpFile);
       //Serial.println(filesize);
       (void)read32(bmpFile); // Read & ignore creator bytes
       bmpImageoffset = read32(bmpFile); // Start of image data
