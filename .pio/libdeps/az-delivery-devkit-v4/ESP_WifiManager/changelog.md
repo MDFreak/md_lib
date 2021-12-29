@@ -13,6 +13,9 @@
 ## Table of Contents
 
 * [Changelog](#changelog)
+  * [Releases v1.7.8](#releases-v178)
+  * [Releases v1.7.7](#releases-v177)
+  * [Releases v1.7.6](#releases-v176)
   * [Releases v1.7.5](#releases-v175)
   * [Releases v1.7.4](#releases-v174)
   * [Releases v1.7.3](#releases-v173)
@@ -45,6 +48,21 @@
 
 
 ## Changelog
+
+### Releases v1.7.8
+
+1. To permit using HTTP port different from 80. Check [WiFiManager works only on port 80 #75](https://github.com/khoih-prog/ESPAsync_WiFiManager/issues/75)
+2. Fix bug returning IP `255.255.255.255` in core v2.0.0+ when using `hostname`
+
+
+### Releases v1.7.7
+
+1. Fix compile error for ESP32 core v1.0.5-
+
+### Releases v1.7.6
+
+1. Auto detect ESP32 core and use either built-in LittleFS or [LITTLEFS](https://github.com/lorol/LITTLEFS) library
+2. Update `library.json` to use new `headers` for PIO
 
 ### Releases v1.7.5
 

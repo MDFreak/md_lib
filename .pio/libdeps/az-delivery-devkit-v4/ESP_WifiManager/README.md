@@ -17,6 +17,7 @@
 * [Why do we need this ESP_WiFiManager library](#why-do-we-need-this-esp_wifimanager-library)
   * [Features](#features)
   * [Currently supported Boards](#currently-supported-boards)
+* [Changelog](changelog.md) 
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
   * [Use Arduino Library Manager](#use-arduino-library-manager)
@@ -219,10 +220,10 @@ It's using a web ConfigPortal, served from the `ESP32 / ESP8266`, and operating 
 
  1. [`Arduino IDE 1.8.16+` for Arduino](https://www.arduino.cc/en/Main/Software)
  2. [`ESP8266 Core 3.0.2+`](https://github.com/esp8266/Arduino) for ESP8266-based boards. [![Latest release](https://img.shields.io/github/release/esp8266/Arduino.svg)](https://github.com/esp8266/Arduino/releases/latest/). To use ESP8266 core 2.7.1+ for LittleFS.
- 3. [`ESP32 Core 2.0.0+`](https://github.com/espressif/arduino-esp32) for ESP32-based boards. [![Latest release](https://img.shields.io/github/release/espressif/arduino-esp32.svg)](https://github.com/espressif/arduino-esp32/releases/latest/)
- 4. [`ESP_DoubleResetDetector v1.1.2+`](https://github.com/khoih-prog/ESP_DoubleResetDetector) if using DRD feature. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/ESP_DoubleResetDetector.svg?)](https://www.ardu-badge.com/ESP_DoubleResetDetector). Use v1.1.0+ if using LittleFS for ESP32.
- 5. [`ESP_MultiResetDetector v1.1.2+`](https://github.com/khoih-prog/ESP_MultiResetDetector) if using MRD feature. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/ESP_MultiResetDetector.svg?)](https://www.ardu-badge.com/ESP_MultiResetDetector).
- 6. [`LittleFS_esp32 v1.0.6+`](https://github.com/lorol/LITTLEFS) for ESP32-based boards using LittleFS. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/LittleFS_esp32.svg?)](https://www.ardu-badge.com/LittleFS_esp32). **Notice**: This [`LittleFS_esp32 library`](https://github.com/lorol/LITTLEFS) has been integrated to Arduino [esp32 core v1.0.6](https://github.com/espressif/arduino-esp32/tree/master/libraries/LITTLEFS).
+ 3. [`ESP32 Core 2.0.1+`](https://github.com/espressif/arduino-esp32) for ESP32-based boards. [![Latest release](https://img.shields.io/github/release/espressif/arduino-esp32.svg)](https://github.com/espressif/arduino-esp32/releases/latest/)
+ 4. [`ESP_DoubleResetDetector v1.2.1+`](https://github.com/khoih-prog/ESP_DoubleResetDetector) if using DRD feature. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/ESP_DoubleResetDetector.svg?)](https://www.ardu-badge.com/ESP_DoubleResetDetector). Use v1.1.0+ if using LittleFS for ESP32.
+ 5. [`ESP_MultiResetDetector v1.2.1+`](https://github.com/khoih-prog/ESP_MultiResetDetector) if using MRD feature. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/ESP_MultiResetDetector.svg?)](https://www.ardu-badge.com/ESP_MultiResetDetector).
+ 6. [`LittleFS_esp32 v1.0.6+`](https://github.com/lorol/LITTLEFS) for ESP32-based boards using LittleFS with ESP32 core v1.0.5-. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/LittleFS_esp32.svg?)](https://www.ardu-badge.com/LittleFS_esp32). **Notice**: This [`LittleFS_esp32 library`](https://github.com/lorol/LITTLEFS) has been integrated to Arduino [ESP32 core v1.0.6+](https://github.com/espressif/arduino-esp32/tree/master/libraries/LITTLEFS) and you don't need to install it if using ESP32 core v1.0.6+
 
 ---
 
@@ -388,13 +389,26 @@ then connect WebBrowser to configurable ConfigPortal IP address, default is 192.
     // Use LittleFS
     #include "FS.h"
 
-    // The library will be depreciated after being merged to future major Arduino esp32 core release 2.x
-    // At that time, just remove this library inclusion
-    #include <LITTLEFS.h>             // https://github.com/lorol/LITTLEFS
+    // Check cores/esp32/esp_arduino_version.h and cores/esp32/core_version.h
+    //#if ( ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(2, 0, 0) )  //(ESP_ARDUINO_VERSION_MAJOR >= 2)
+    #if ( defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 2) )
+      #warning Using ESP32 Core 1.0.6 or 2.0.0+
+      // The library has been merged into esp32 core from release 1.0.6
+      #include <LittleFS.h>
+      
+      FS* filesystem =      &LittleFS;
+      #define FileFS        LittleFS
+      #define FS_Name       "LittleFS"
+    #else
+      #warning Using ESP32 Core 1.0.5-. You must install LITTLEFS library
+      // The library has been merged into esp32 core from release 1.0.6
+      #include <LITTLEFS.h>             // https://github.com/lorol/LITTLEFS
+      
+      FS* filesystem =      &LITTLEFS;
+      #define FileFS        LITTLEFS
+      #define FS_Name       "LittleFS"
+    #endif
     
-    FS* filesystem =      &LITTLEFS;
-    #define FileFS        LITTLEFS
-    #define FS_Name       "LittleFS"
   #elif USE_SPIFFS
     #include <SPIFFS.h>
     FS* filesystem =      &SPIFFS;
@@ -514,13 +528,26 @@ WM_Config         WM_config;
     // Use LittleFS
     #include "FS.h"
 
-    // The library will be depreciated after being merged to future major Arduino esp32 core release 2.x
-    // At that time, just remove this library inclusion
-    #include <LITTLEFS.h>             // https://github.com/lorol/LITTLEFS
+    // Check cores/esp32/esp_arduino_version.h and cores/esp32/core_version.h
+    //#if ( ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(2, 0, 0) )  //(ESP_ARDUINO_VERSION_MAJOR >= 2)
+    #if ( defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 2) )
+      #warning Using ESP32 Core 1.0.6 or 2.0.0+
+      // The library has been merged into esp32 core from release 1.0.6
+      #include <LittleFS.h>
+      
+      FS* filesystem =      &LittleFS;
+      #define FileFS        LittleFS
+      #define FS_Name       "LittleFS"
+    #else
+      #warning Using ESP32 Core 1.0.5-. You must install LITTLEFS library
+      // The library has been merged into esp32 core from release 1.0.6
+      #include <LITTLEFS.h>             // https://github.com/lorol/LITTLEFS
+      
+      FS* filesystem =      &LITTLEFS;
+      #define FileFS        LITTLEFS
+      #define FS_Name       "LittleFS"
+    #endif
     
-    FS* filesystem =      &LITTLEFS;
-    #define FileFS        LITTLEFS
-    #define FS_Name       "LittleFS"
   #elif USE_SPIFFS
     #include <SPIFFS.h>
     FS* filesystem =      &SPIFFS;
@@ -2097,7 +2124,7 @@ ESP_wifiManager.setRemoveDuplicateAPs(false);
   #error This code is intended to run on the ESP8266 or ESP32 platform! Please check your Tools->Board setting.
 #endif
 
-#define ESP_WIFIMANAGER_VERSION_MIN_TARGET     "ESP_WiFiManager v1.7.5"
+#define ESP_WIFIMANAGER_VERSION_MIN_TARGET     "ESP_WiFiManager v1.7.8"
 
 // Use from 0 to 4. Higher number, more debugging messages and memory usage.
 #define _WIFIMGR_LOGLEVEL_    3
@@ -2135,12 +2162,26 @@ ESP_wifiManager.setRemoveDuplicateAPs(false);
     // Use LittleFS
     #include "FS.h"
 
-    // The library has been merged into esp32 core release 1.0.6
-     #include <LITTLEFS.h>             // https://github.com/lorol/LITTLEFS
+    // Check cores/esp32/esp_arduino_version.h and cores/esp32/core_version.h
+    //#if ( ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(2, 0, 0) )  //(ESP_ARDUINO_VERSION_MAJOR >= 2)
+    #if ( defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 2) )
+      #warning Using ESP32 Core 1.0.6 or 2.0.0+
+      // The library has been merged into esp32 core from release 1.0.6
+      #include <LittleFS.h>
+      
+      FS* filesystem =      &LittleFS;
+      #define FileFS        LittleFS
+      #define FS_Name       "LittleFS"
+    #else
+      #warning Using ESP32 Core 1.0.5-. You must install LITTLEFS library
+      // The library has been merged into esp32 core from release 1.0.6
+      #include <LITTLEFS.h>             // https://github.com/lorol/LITTLEFS
+      
+      FS* filesystem =      &LITTLEFS;
+      #define FileFS        LITTLEFS
+      #define FS_Name       "LittleFS"
+    #endif
     
-    FS* filesystem =      &LITTLEFS;
-    #define FileFS        LITTLEFS
-    #define FS_Name       "LittleFS"
   #elif USE_SPIFFS
     #include <SPIFFS.h>
     FS* filesystem =      &SPIFFS;
@@ -2418,6 +2459,9 @@ IPAddress dns2IP      = IPAddress(8, 8, 8, 8);
 IPAddress APStaticIP  = IPAddress(192, 168, 100, 1);
 IPAddress APStaticGW  = IPAddress(192, 168, 100, 1);
 IPAddress APStaticSN  = IPAddress(255, 255, 255, 0);
+
+// Must be placed before #include <ESP_WiFiManager.h>, or default port 80 will be used
+//#define HTTP_PORT     8080
 
 #include <ESP_WiFiManager.h>              //https://github.com/khoih-prog/ESP_WiFiManager
 
@@ -2744,10 +2788,10 @@ bool loadConfigData()
   File file = FileFS.open(CONFIG_FILENAME, "r");
   LOGERROR(F("LoadWiFiCfgFile "));
 
-  memset((void*) &WM_config,       0, sizeof(WM_config));
+  memset((void *) &WM_config,       0, sizeof(WM_config));
 
   // New in v1.4.0
-  memset((void*) &WM_STA_IPconfig, 0, sizeof(WM_STA_IPconfig));
+  memset((void *) &WM_STA_IPconfig, 0, sizeof(WM_STA_IPconfig));
   //////
 
   if (file)
@@ -2984,6 +3028,10 @@ void wifi_manager()
   Serial.print(APStaticIP);
 #else
   Serial.print(F("192.168.4.1"));
+#endif
+
+#if defined(HTTP_PORT_TO_USE)
+    Serial.print(F(":")); Serial.print(HTTP_PORT_TO_USE);
 #endif
 
   Serial.print(F(", SSID = "));
@@ -3442,7 +3490,7 @@ This is terminal debug output when running [ConfigOnSwitchFS_MQTT_Ptr](examples/
 
 ```
 Starting ConfigOnSwichFS_MQTT_Ptr using LittleFS on ESP8266_NODEMCU_ESP12E
-ESP_WiFiManager v1.7.5
+ESP_WiFiManager v1.7.8
 Configuration file not found
 Failed to read configuration file, using default values
 [WM] RFC925 Hostname = ConfigOnSwichFS-MQTT
@@ -3554,8 +3602,8 @@ This is terminal debug output when running [ESP32_FSWebServer_DRD](examples/ESP3
 
 ```cpp
 Starting ESP32_FSWebServer_DRD with DoubleResetDetect using SPIFFS on ESP32_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 FS File: /ConfigSW.json, size: 150B
 FS File: /CanadaFlag_1.png, size: 40.25KB
 FS File: /CanadaFlag_2.png, size: 8.12KB
@@ -3619,8 +3667,8 @@ This is terminal debug output when running [ESP32_FSWebServer_DRD](examples/ESP3
 
 ```
 Starting ESP32_FSWebServer_DRD with DoubleResetDetect using LittleFS on ESP32_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 FS File: /CanadaFlag_1.png, size: 40.25KB
 FS File: /CanadaFlag_2.png, size: 8.12KB
 FS File: /CanadaFlag_3.jpg, size: 10.89KB
@@ -3678,8 +3726,8 @@ This is terminal debug output when running [ConfigOnDRD_FS_MQTT_Ptr_Complex](exa
 
 ```
 Starting ConfigOnDRD_FS_MQTT_Ptr_Complex using LittleFS on ESP32_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 {"AIO_KEY_Label":"aio_key","AIO_SERVER_Label":"io.adafruit.com","AIO_SERVERPORT_Label":"1883","AIO_USERNAME_Label":"user_name"}
 Config File successfully parsed
 LittleFS Flag read = 0xd0d04321
@@ -3721,8 +3769,8 @@ WWWW WTWWWW WWTWWW WWWTWW WWWWTW WWWWW
 
 ```
 Starting ConfigOnDRD_FS_MQTT_Ptr_Complex using LittleFS on ESP32_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 {"AIO_KEY_Label":"aio_key","AIO_SERVER_Label":"io.adafruit.com","AIO_SERVERPORT_Label":"1883","AIO_USERNAME_Label":"user_name"}
 Config File successfully parsed
 LittleFS Flag read = 0xd0d01234
@@ -3806,8 +3854,8 @@ This is terminal debug output when running [ConfigOnDRD_FS_MQTT_Ptr_Complex](exa
 
 ```
 Starting ConfigOnDRD_FS_MQTT_Ptr_Medium using LittleFS on ESP8266_NODEMCU_ESP12E
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 {"AIO_KEY_Label":"aio_key","AIO_SERVER_Label":"io.adafruit.com","AIO_SERVERPORT_Label":"1883","AIO_USERNAME_Label":"user_name"}
 Config File successfully parsed
 LittleFS Flag read = 0xd0d04321
@@ -3846,8 +3894,8 @@ TWWWW WTWWWW WWTWWW WWWTWW WWWWTW WWWWW
 
 ```
 Starting ConfigOnDRD_FS_MQTT_Ptr_Medium using LittleFS on ESP8266_NODEMCU_ESP12E
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 {"AIO_KEY_Label":"aio_key","AIO_SERVER_Label":"io.adafruit.com","AIO_SERVERPORT_Label":"1883","AIO_USERNAME_Label":"user_name"}
 Config File successfully parsed
 LittleFS Flag read = 0xd0d01234
@@ -3923,8 +3971,8 @@ This is terminal debug output when running [ConfigOnDoubleReset](examples/Config
 
 ```
 Starting ConfigOnDoubleReset with DoubleResetDetect using LittleFS on ESP32S2_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 [WM] RFC925 Hostname = ConfigOnDoubleReset
 [WM] setAPStaticIPConfig
 [WM] Set CORS Header to :  Your Access-Control-Allow-Origin
@@ -3973,8 +4021,8 @@ This is terminal debug output when running [ConfigOnDoubleReset](examples/Config
 
 ```
 Starting ConfigOnDoubleReset with DoubleResetDetect using LittleFS on ESP32_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 [WM] RFC925 Hostname = ConfigOnDoubleReset
 [WM] Set CORS Header to :  Your Access-Control-Allow-Origin
 ESP Self-Stored: SSID = HueNet1, Pass = password
@@ -3992,7 +4040,7 @@ doubleResetDetected
 Saving config file...
 Saving config file OK
 Open Config Portal without Timeout: Double Reset Detected
-Starting configuration portal @ 192.168.4.1, SSID = ESP_9ABF498, PWD = MyESP_9ABF498
+Starting configuration portal @ 192.168.4.1:80, SSID = ESP_9ABF498, PWD = MyESP_9ABF498
 ```
 
 #### 7.2 Data Saved => Connect to WiFi with correct local time, TZ set and using NTP
@@ -4083,8 +4131,8 @@ Local Date/Time: Thu May  6 21:29:18 2021
 
 ```
 Starting ConfigOnDoubleReset with DoubleResetDetect using LittleFS on ESP32_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 [WM] RFC925 Hostname = ConfigOnDoubleReset
 [WM] Set CORS Header to :  Your Access-Control-Allow-Origin
 ESP Self-Stored: SSID = HueNet1, Pass = password
@@ -4134,8 +4182,8 @@ This is terminal debug output when running [ConfigOnDoubleReset](examples/Config
 
 ```
 Starting ConfigOnDoubleReset with DoubleResetDetect using LittleFS on ESP32S2_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 [WM] RFC925 Hostname = ConfigOnDoubleReset
 [WM] Set CORS Header to :  Your Access-Control-Allow-Origin
 ESP Self-Stored: SSID = HueNet1, Pass = password
@@ -4149,7 +4197,7 @@ LittleFS Flag read = 0xD0D04321
 No doubleResetDetected
 Saving config file...
 Saving config file OK
-Starting configuration portal @ 192.168.4.1, SSID = ESP_8A1DF7C, PWD = MyESP_8A1DF7C
+Starting configuration portal @ 192.168.4.1:80, SSID = ESP_8A1DF7C, PWD = MyESP_8A1DF7C
 ```
 
 #### 8.2 Data Saved => Connect to WiFi with correct local time, TZ set and using NTP
@@ -4280,8 +4328,8 @@ Local Date/Time: Thu May  6 21:29:18 2021
 
 ```
 Starting ConfigOnDoubleReset with DoubleResetDetect using LittleFS on ESP32S2_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 [WM] RFC925 Hostname = ConfigOnDoubleReset
 [WM] Set CORS Header to :  Your Access-Control-Allow-Origin
 ESP Self-Stored: SSID = HueNet1, Pass = password
@@ -4333,8 +4381,8 @@ This is terminal debug output when running [ESP32_FSWebServer_DRD](examples/ESP3
 
 ```
 Starting ESP32_FSWebServer_DRD with DoubleResetDetect using SPIFFS on ESP32C3_DEV
-ESP_WiFiManager v1.7.5
-ESP_DoubleResetDetector v1.1.2
+ESP_WiFiManager v1.7.8
+ESP_DoubleResetDetector v1.2.1
 FS File: wm_cp.dat, size: 4B
 FS File: wm_cp.bak, size: 4B
 FS File: wmssl_conf.dat, size: 376B
@@ -4455,7 +4503,7 @@ Submit issues to: [ESP_WiFiManager issues](https://github.com/khoih-prog/ESP_WiF
 14. Thanks to [Stephen Lavelle](https://github.com/increpare) and [Ben Peart](https://github.com/benpeart) for requesting enhancement in [_timezoneName never getting set? #51](https://github.com/khoih-prog/ESP_WiFiManager/issues/51) and [How to retrieve timezone? #51](https://github.com/khoih-prog/ESPAsync_WiFiManager/issues/51) leading to new v1.7.0
 15. Thanks to [energise](https://github.com/energise) to report the issue in [Invalid Json generated #60](https://github.com/khoih-prog/ESP_WiFiManager/issues/60) leading to new v1.7.1
 16. Thanks to [eth0up](https://github.com/eth0up) to make the PR [Add support for Wifi hidden SSID scanning. #66](https://github.com/khoih-prog/ESP_WiFiManager/pull/66) leading to v1.7.4
-
+17. Thanks to [Dean Ott](https://github.com/deanjott) for reporting [WiFiManager works only on port 80 #75](https://github.com/khoih-prog/ESPAsync_WiFiManager/issues/75) and providing the solution leading to v1.7.8
 
 <table>
   <tr>
@@ -4484,6 +4532,7 @@ Submit issues to: [ESP_WiFiManager issues](https://github.com/khoih-prog/ESP_WiF
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/eth0up"><img src="https://github.com/eth0up.png" width="100px;" alt="eth0up"/><br /><sub><b>eth0up</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/deanjott"><img src="https://github.com/deanjott.png" width="100px;" alt="deanjott"/><br /><sub><b>Dean Ott</b></sub></a><br /></td>
   </tr>
 </table>
 
