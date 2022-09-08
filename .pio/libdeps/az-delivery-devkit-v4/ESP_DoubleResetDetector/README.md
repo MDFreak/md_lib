@@ -6,6 +6,9 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](#Contributing)
 [![GitHub issues](https://img.shields.io/github/issues/khoih-prog/ESP_DoubleResetDetector.svg)](http://github.com/khoih-prog/ESP_DoubleResetDetector/issues)
 
+<a href="https://www.buymeacoffee.com/khoihprog6" title="Donate to my libraries using BuyMeACoffee"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Donate to my libraries using BuyMeACoffee" style="height: 50px !important;width: 181px !important;" ></a>
+<a href="https://www.buymeacoffee.com/khoihprog6" title="Donate to my libraries using BuyMeACoffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-orange.svg?logo=buy-me-a-coffee&logoColor=FFDD00" style="height: 20px !important;width: 200px !important;" ></a>
+
 ---
 ---
 
@@ -26,6 +29,7 @@
   * [ 2. ConfigOnDRD_ESP32_minimal](examples/ConfigOnDRD_ESP32_minimal)
   * [ 3. ConfigOnDRD_ESP8266_minimal](examples/ConfigOnDRD_ESP8266_minimal)
   * [ 4. minimal](examples/minimal)
+  * [ 5. checkWaitingDRD](examples/checkWaitingDRD) **New**
  * [Examples from other libraries](#examples-from-other-libraries)
   * [ 1. ESP_WiFiManager Library](https://github.com/khoih-prog/ESP_WiFiManager)
     * [ 1. ConfigOnDoubleReset](https://github.com/khoih-prog/ESP_WiFiManager/tree/master/examples/ConfigOnDoubleReset)
@@ -54,9 +58,11 @@
     * [ 6. Blynk_Async_ESP32_BT_WF](https://github.com/khoih-prog/Blynk_Async_ESP32_BT_WF)
     * [ 7. Blynk_Async_GSM_Manager](https://github.com/khoih-prog/Blynk_Async_GSM_Manager)
     * [ 8. Ethernet_Manager](https://github.com/khoih-prog/Ethernet_Manager)
+* [Example checkWaitingDRD](#Example-checkWaitingDRD) 
 * [Debug Terminal Output Samples](#debug-terminal-output-samples)
   * [1. ESP32_FSWebServer_DRD on ESP32_DEV](#1-esp32_fswebserver_drd-on-esp32_dev)
   * [2. ConfigOnDoubleReset on ESP32_DEV](#2-configondoublereset-on-esp32_dev)
+  * [3. ESPAsync_WiFi using LittleFS on ESP32S3_DEV](#3-ESPAsync_WiFi-using-LittleFS-on-ESP32S3_DEV)
 * [Libraries using ESP_DoubleResetDetector or DoubleResetDetector_Generic library](#libraries-using-esp_doubleresetdetector-or-doubleresetdetector_generic-library)
 * [Debug](#debug)
 * [Troubleshooting](#troubleshooting)
@@ -90,7 +96,7 @@ This library can be used to detect a double reset within a predetermined time to
 
 This [**ESP_DoubleResetDetector** library](https://github.com/khoih-prog/ESP_DoubleResetDetector) currently supports these following boards:
 
- 1. **ESP32 boards using EEPROM, SPIFFS or LittleFS**.
+ 1. **ESP32, ESP32_C3, ESP32_S2 and ESP32_S3 boards, using EEPROM, SPIFFS or LittleFS**.
  2. **ESP8266 boards RTC memory, EEPROM, SPIFFS or LittleFS**
  
 ---
@@ -98,12 +104,13 @@ This [**ESP_DoubleResetDetector** library](https://github.com/khoih-prog/ESP_Dou
 
 ## Prerequisites
 
-1. [`Arduino IDE 1.8.16+` for Arduino](https://www.arduino.cc/en/Main/Software)
-2. [`ESP32 Core 2.0.1+`](https://github.com/espressif/arduino-esp32) for ESP32-based boards. [![Latest release](https://img.shields.io/github/release/espressif/arduino-esp32.svg)](https://github.com/espressif/arduino-esp32/releases/latest/)
+1. [`Arduino IDE 1.8.19+` for Arduino](https://github.com/arduino/Arduino). [![GitHub release](https://img.shields.io/github/release/arduino/Arduino.svg)](https://github.com/arduino/Arduino/releases/latest)
+2. [`ESP32 Core 2.0.2+`](https://github.com/espressif/arduino-esp32) for ESP32-based boards. [![Latest release](https://img.shields.io/github/release/espressif/arduino-esp32.svg)](https://github.com/espressif/arduino-esp32/releases/latest/)
 3. [`ESP8266 Core 3.0.2+`](https://github.com/esp8266/Arduino) for ESP8266-based boards. [![Latest release](https://img.shields.io/github/release/esp8266/Arduino.svg)](https://github.com/esp8266/Arduino/releases/latest/). SPIFFS is deprecated from ESP8266 core 2.7.1+, to use LittleFS. 
 
 4. [`LittleFS_esp32 v1.0.6+`](https://github.com/lorol/LITTLEFS) for ESP32-based boards using LittleFS with ESP32 core v1.0.5-. To install, check [![arduino-library-badge](https://www.ardu-badge.com/badge/LittleFS_esp32.svg?)](https://www.ardu-badge.com/LittleFS_esp32). **Notice**: This [`LittleFS_esp32 library`](https://github.com/lorol/LITTLEFS) has been integrated to Arduino [ESP32 core v1.0.6+](https://github.com/espressif/arduino-esp32/tree/master/libraries/LITTLEFS) and you don't need to install it if using ESP32 core v1.0.6+
 
+---
 ---
 
 ## Installation
@@ -122,7 +129,7 @@ The best and easiest way is to use `Arduino Library Manager`. Search for `ESP_Do
 
 1. Install [VS Code](https://code.visualstudio.com/)
 2. Install [PlatformIO](https://platformio.org/platformio-ide)
-3. Install [**ESP_DoubleResetDetector** library](https://platformio.org/lib/show/11521/ESP_DoubleResetDetector) by using [Library Manager](https://platformio.org/lib/show/11521/ESP_DoubleResetDetector/installation). Search for **ESP_DoubleResetDetector** in [Platform.io Author's Libraries](https://platformio.org/lib/search?query=author:%22Khoi%20Hoang%22)
+3. Install [**ESP_DoubleResetDetector** library](https://registry.platformio.org/libraries/khoih-prog/ESP_DoubleResetDetector) by using [Library Manager](https://registry.platformio.org/libraries/khoih-prog/ESP_DoubleResetDetector/installation). Search for **ESP_DoubleResetDetector** in [Platform.io Author's Libraries](https://platformio.org/lib/search?query=author:%22Khoi%20Hoang%22)
 4. Use included [platformio.ini](platformio/platformio.ini) file from examples to ensure that all dependent libraries will installed automatically. Please visit documentation for the other options and examples at [Project Configuration File](https://docs.platformio.org/page/projectconf.html)
 
 ---
@@ -264,16 +271,25 @@ and there are many more.
 ---
 ---
 
+### Example [checkWaitingDRD](examples/checkWaitingDRD)
+
+https://github.com/khoih-prog/ESP_DoubleResetDetector/blob/28a1b81298cd5b9c2ffabe35e60cffa1874ec837/examples/checkWaitingDRD/checkWaitingDRD.ino#L20-L132
+
+
+
+---
+---
+
 ### Debug Terminal Output Samples
 
 #### 1. ESP32_FSWebServer_DRD on ESP32_DEV
 
-This is terminal debug output when running [ESP32_FSWebServer_DRD](https://github.com/khoih-prog/ESP_WiFiManager/tree/master/examples/ESP32_FSWebServer_DRD) on  ***ESP32 ESP32_DEV.***. Config Portal was requested by DRD to input and save Credentials. The boards then connected to WiFi AP **HueNet1** using new Static IP successfully. WiFi AP **HueNet1** is then lost, and board **autoreconnects** itself to backup WiFi AP **HueNet2**.
+This is terminal debug output when running [ESP32_FSWebServer_DRD](https://github.com/khoih-prog/ESP_WiFiManager/tree/master/examples/ESP32_FSWebServer_DRD) on  **ESP32 ESP32_DEV.**. Config Portal was requested by DRD to input and save Credentials. The boards then connected to WiFi AP **HueNet1** using new Static IP successfully. WiFi AP **HueNet1** is then lost, and board **autoreconnects** itself to backup WiFi AP **HueNet2**.
 
 ```cpp
 Starting ESP32_FSWebServer_DRD with DoubleResetDetect using SPIFFS on ESP32_DEV
-ESP_WiFiManager Version v1.7.7
-ESP_DoubleResetDetector Version v1.2.1
+ESP_WiFiManager v1.10.1
+ESP_DoubleResetDetector v1.3.1
 FS File: /ConfigSW.json, size: 150B
 FS File: /CanadaFlag_1.png, size: 40.25KB
 FS File: /CanadaFlag_2.png, size: 8.12KB
@@ -333,13 +349,13 @@ HHHHHHHHHH HHHHHHHHHH HHHHHHHHHH HHHHHHHHHH
 
 #### 2. ConfigOnDoubleReset on ESP32_DEV
 
-This is terminal debug output when running [ConfigOnDoubleReset](https://github.com/khoih-prog/ESP_WiFiManager/tree/master/examples/ConfigOnDoubleReset) on  ***ESP32 ESP32_DEV.***. Config Portal was requested by DRD to input and save Credentials.
+This is terminal debug output when running [ConfigOnDoubleReset](https://github.com/khoih-prog/ESP_WiFiManager/tree/master/examples/ConfigOnDoubleReset) on  **ESP32 ESP32_DEV.**. Config Portal was requested by DRD to input and save Credentials.
 
 
 ```
 Starting ConfigOnDoubleReset with DoubleResetDetect using LittleFS on ESP32_DEV
-ESP_WiFiManager Version v1.7.7
-ESP_DoubleResetDetector Version v1.2.1
+ESP_WiFiManager v1.10.1
+ESP_DoubleResetDetector v1.3.1
 [WM] RFC925 Hostname = ConfigOnDoubleReset
 [WM] Set CORS Header to :  Your Access-Control-Allow-Origin
 Stored: SSID = HueNet1, Pass = 12345678
@@ -382,8 +398,8 @@ load:0x40080400,len:6352
 entry 0x400806b8
 
 Starting ConfigOnDoubleReset with DoubleResetDetect using LittleFS on ESP32_DEV
-ESP_WiFiManager Version v1.7.7
-ESP_DoubleResetDetector Version v1.2.1
+ESP_WiFiManager Version v1.10.1
+ESP_DoubleResetDetector Version v1.3.1
 [WM] RFC925 Hostname = ConfigOnDoubleReset
 [WM] Set CORS Header to :  Your Access-Control-Allow-Origin
 Stored: SSID = HueNet1, Pass = jenniqqs
@@ -404,6 +420,56 @@ Starting configuration portal.
 [WM] HTTP server started
 [WM] ESP_WiFiManager::startConfigPortal : Enter loop
 
+```
+
+---
+
+#### 3. ESPAsync_WiFi using LittleFS on ESP32S3_DEV
+
+This is terminal debug output when running [ESPAsync_WiFi](https://github.com/khoih-prog/ESPAsync_WiFiManager_Lite/tree/master/examples/ESPAsync_WiFi) on  **ESP32 ESP32S3_DEV.**. Config Portal was requested by DRD to input and save Credentials.
+
+
+```
+Starting ESPAsync_WiFi using LittleFS on ESP32S3_DEV
+ESPAsync_WiFiManager_Lite v1.8.2
+ESP_DoubleResetDetector v1.3.1
+LittleFS Flag read = 0xD0D01234
+doubleResetDetected
+Saving config file...
+Saving config file OK
+[WML] Hdr=ESP_WM_LITE,SSID=HueNet1,PW=12345678
+[WML] SSID1=HueNet2,PW1=12345678
+[WML] BName=ESP32_S3
+[WML] Hdr=ESP_WM_LITE,SSID=HueNet1,PW=12345678
+[WML] SSID1=HueNet2,PW1=12345678
+[WML] BName=ESP32_S3
+[WML] WiFi networks found:
+[WML] 1: HueNet, -20dB
+[WML] 2: HueNetTek, -32dB
+[WML] 3: HueNet1, -39dB
+[WML] 4: HueNet2, -54dB
+[WML] 5: DECO-5655, -72dB
+[WML] 6: Guest5655, -72dB
+[WML] 7: rogers786, -76dB
+[WML] 8: AT_301_WLREL6325F_f66d, -76dB
+[WML] 10: Rogers 786, -78dB
+[WML] 11: BELL042, -80dB
+[WML] 12: WirelessMississauga, -82dB
+[WML] 13: SmartRG-02a2, -87dB
+[WML] 14: Jasmine, -87dB
+[WML] 15: Access, -89dB
+[WML] 16: Jessie, -90dB
+[WML] 
+stConf:SSID=ESP_E1A1DF7C,PW=MyESP_E1A1DF7C
+[WML] IP=192.168.4.1,ch=10
+F
+Your stored Credentials :
+Blynk Server1 = account.duckdns.org
+Token1 = token1
+Blynk Server2 = account.ddns.net
+Token2 = token2
+Port = 8080
+MQTT Server = mqtt.duckdns.org
 ```
 
 ---
@@ -472,6 +538,8 @@ Submit issues to: [ESP_DoubleResetDetector issues](https://github.com/khoih-prog
 
 1. For ESP32 and ESP8266 (EEPROM, SPIFFS and LittleFS).
 2. Similar features for Arduino (UNO, Mega, SAM DUE, SAMD21/SAMD51, nRF52, STM32, Teensy, etc.). Look at [**DoubleResetDetector_Generic**](https://github.com/khoih-prog/DoubleResetDetector_Generic)
+3. Add support to `ESP32_C3`, `ESP32_S2`
+4. Add support to `ESP32_S3` using ESP32 core v2.0.2+
 
 
 ---
@@ -480,10 +548,13 @@ Submit issues to: [ESP_DoubleResetDetector issues](https://github.com/khoih-prog
 ### Contributions and thanks
 
 1. Thanks to [zobix](https://github.com/zobix) for report the bug in [Isssue 2](https://github.com/khoih-prog/ESP_DoubleResetDetector/issues/2)
+1. Thanks to [Tochi Moreno](https://github.com/tochimoreno) for enhancement request in [DRD is waiting for a double reset? #14](https://github.com/khoih-prog/ESP_DoubleResetDetector/discussions/14) leading to v1.3.1 to add `waitingForDRD()` function to signal in DRD wating period
+
 
 <table>
   <tr>
     <td align="center"><a href="https://github.com/zobix"><img src="https://github.com/zobix.png" width="100px;" alt="zobix"/><br /><sub><b>Zobix</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/tochimoreno"><img src="https://github.com/tochimoreno.png" width="100px;" alt="tochimoreno"/><br /><sub><b>Tochi Moreno</b></sub></a><br /></td>
   </tr> 
 </table>
 

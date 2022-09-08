@@ -23,17 +23,31 @@
 #define ASYNCTCP_H_
 
 #include "IPAddress.h"
-#include "sdkconfig.h"
 #include <functional>
+
+#ifndef LIBRETUYA
+#include "sdkconfig.h"
 extern "C" {
     #include "freertos/semphr.h"
     #include "lwip/pbuf.h"
 }
+#else
+extern "C" {
+    #include <semphr.h>
+    #include <lwip/pbuf.h>
+}
+#define CONFIG_ASYNC_TCP_RUNNING_CORE -1 //any available core
+#define CONFIG_ASYNC_TCP_USE_WDT 0
+#endif
 
 //If core is not defined, then we are running in Arduino or PIO
 #ifndef CONFIG_ASYNC_TCP_RUNNING_CORE
 #define CONFIG_ASYNC_TCP_RUNNING_CORE -1 //any available core
 #define CONFIG_ASYNC_TCP_USE_WDT 1 //if enabled, adds between 33us and 200us per event
+#endif
+
+#ifndef CONFIG_ASYNC_TCP_STACK_SIZE
+#define CONFIG_ASYNC_TCP_STACK_SIZE 8192 * 2
 #endif
 
 class AsyncClient;
@@ -160,12 +174,12 @@ class AsyncClient {
     AcConnectHandler _poll_cb;
     void* _poll_cb_arg;
 
-    uint32_t _pcb_busy;
-    uint32_t _pcb_sent_at;
     bool _ack_pcb;
+    uint32_t _tx_last_packet;
     uint32_t _rx_ack_len;
     uint32_t _rx_last_packet;
-    uint32_t _rx_since_timeout;
+    uint32_t _rx_timeout;
+    uint32_t _rx_last_ack;
     uint32_t _ack_timeout;
     uint16_t _connect_port;
 

@@ -39,6 +39,7 @@ esp_err_t md_spiffs::init(md_spiffs* pffs, bool    formatOnFail, const char * ba
     SOUT(" SPIFFS started used/total bytes "); SOUTHEX(_used);
     SOUT("/"); SOUTHEX(_total); SOUT("  ");
     SOUT(_used); SOUT("/"); SOUTLN(_total);
+    return ESP_OK;
   }
 
 void      md_spiffs::clearBuffer()

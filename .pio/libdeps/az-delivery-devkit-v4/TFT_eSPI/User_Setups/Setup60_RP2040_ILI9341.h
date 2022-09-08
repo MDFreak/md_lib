@@ -8,7 +8,7 @@
 //   run without the need to make any more changes for a particular hardware setup!
 //   Note that some sketches are designed for a particular TFT pixel width/height
 
-
+#define USER_SETUP_ID 60
 // ##################################################################################
 //
 // Section 1. Call up the right driver file and any options for it
@@ -162,6 +162,9 @@
 // Section 4. Other options
 //
 // ##################################################################################
+
+// For the RP2040 processor define the SPI port channel used, default is 0
+// #define TFT_SPI_PORT 1 // Set to 0 if SPI0 pins are used, or 1 if spi1 pins used
 
 // Define the SPI clock frequency, this affects the graphics rendering speed. Too
 // fast and the TFT driver will not keep up and display corruption appears.

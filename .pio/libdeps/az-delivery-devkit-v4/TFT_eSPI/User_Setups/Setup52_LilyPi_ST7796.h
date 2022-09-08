@@ -1,3 +1,5 @@
+#define USER_SETUP_ID 52
+
 #define ST7796_DRIVER
 
 #define TFT_BL   12				// LED back-light control pin
@@ -23,4 +25,4 @@
 #define SMOOTH_FONT
 
 #define SPI_FREQUENCY		40000000
-#define SPI_READ_FREQUENCY  20000000
+#define SPI_READ_FREQUENCY  12000000
