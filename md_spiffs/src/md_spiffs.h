@@ -11,24 +11,23 @@
 #ifndef _MD_SPIFFS_HPP_
   #define _MD_SPIFFS_HPP_
     //#include <stdio.h>
-    //#include <string.h>
-    //#include <sys/unistd.h>
-    //#include <sys/stat.h>
-    //#include <stdlib.h>
+      //#include <string.h>
+      //#include <sys/unistd.h>
+      //#include <sys/stat.h>
+      //#include <stdlib.h>
     #include "esp_err.h"
-    //#include "esp_log.h"
-    //#include "esp_spiffs.h"
+      //#include "esp_log.h"
+      //#include "esp_spiffs.h"
     #include <SPIFFS.h>
     #include <md_defines.h>
 
     #define FFS_MAXLEN 50
-
     /*
-      static const char *TAG = "SPIFFS";
+        static const char *TAG = "SPIFFS";
 
-      static const char *base_path = "/spiffs";
-      char buffer[FFS_MAXLEN];
-    */
+        static const char *base_path = "/spiffs";
+        char buffer[FFS_MAXLEN];
+      */
 
     //*****************************************************************************
     class md_spiffs : public fs::SPIFFSFS
@@ -59,14 +58,12 @@
           uint8_t   readFile(const char* filename, uint16_t len, char* textBuf);
           void      clearBuffer();
           //uint8_t disableSpiffs();
-
         private:
           md_spiffs*  _pffs  = NULL;
           size_t      _total = 0; //
           size_t      _used  = 0;
-
       };
-
+  extern md_spiffs  spiffs;
 /*
     void app_main(void)
     {

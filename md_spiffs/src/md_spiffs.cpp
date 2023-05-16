@@ -32,21 +32,28 @@ char buffer[FFS_MAXLEN];
 esp_err_t md_spiffs::init(md_spiffs* pffs, bool    formatOnFail, const char * basePath,
                                            uint8_t maxOpenFiles, const char * partitionLabel)
   {
+    uint8_t ret = MD_ERR;
     _pffs  = pffs;
     _total = _pffs->totalBytes();
     _used  = _pffs->usedBytes();
-    this->begin(formatOnFail, basePath, maxOpenFiles, partitionLabel);
-    SOUT(" SPIFFS started used/total bytes "); SOUTHEX(_used);
-    SOUT("/"); SOUTHEX(_total); SOUT("  ");
-    SOUT(_used); SOUT("/"); SOUTLN(_total);
-    return ESP_OK;
+    //this->begin(formatOnFail, basePath, maxOpenFiles, partitionLabel);
+    ret = this->begin();
+    if (ret == true)
+      {
+        S2VAL(" SPIFFS started   used total [bytes] ", _used, _total);
+        ret = ESP_OK;
+      }
+    else
+      {
+        STXT(" ERR could not start SPIFFS ");
+        ret = MD_ERR;
+      }
+    return ret;
   }
-
 void      md_spiffs::clearBuffer()
   {
     memset(buffer, 0, FFS_MAXLEN);
   }
-
 uint8_t   md_spiffs::writeFile  (char* filename, const char* text)
   {
     if(filename[0] != '/')
@@ -68,7 +75,6 @@ uint8_t   md_spiffs::writeFile  (char* filename, const char* text)
     SOUT(TAG); SOUT(" File writen '"); SOUT(buffer); SOUTLN("'");
     return ESP_OK;
   }
-
 uint8_t   md_spiffs::deleteFile (const char* filename)
  {
     esp_err_t ret = ESP_OK;
@@ -104,14 +110,12 @@ uint8_t   md_spiffs::deleteFile (const char* filename)
 uint8_t   md_spiffs::renameFile (const char* filename_src, const char* filename_tar)
   {
     esp_err_t ret = ESP_OK;
-
     if(filename_src[0] != '/' || filename_tar[0] != '/')
       {
         ESP_LOGE(TAG, "Filename must begin with '/");
         return 1;
       }
     clearBuffer();
-
     // Check if file exists
     strcpy(buffer, base_path);
     strcat(buffer, filename_src);
@@ -123,7 +127,6 @@ uint8_t   md_spiffs::renameFile (const char* filename_src, const char* filename_
         char* tarBuf = (char*) malloc(memSize*sizeof(char));
         strcpy(tarBuf, base_path);
         strcat(tarBuf,filename_tar);
-
         if (rename(buffer, tarBuf) != 0)
           {
             ESP_LOGE(TAG, "failed to rename file: %s -> %s", buffer, tarBuf);
@@ -143,7 +146,6 @@ uint8_t   md_spiffs::renameFile (const char* filename_src, const char* filename_
         return 1;
       }
   }
-
 uint8_t   md_spiffs::readFile   (const char* filename, uint16_t len, char* textBuf)
   {
     if(filename[0] != '/')
@@ -165,8 +167,7 @@ uint8_t   md_spiffs::readFile   (const char* filename, uint16_t len, char* textB
     ESP_LOGI(TAG, "Read %d bytes from file: %s", len, buffer);
     return ESP_OK;
   }
-
-  /*
+/*
     esp_err_t md_spiffs::init(bool    formatOnFail, const char * basePath,
                               uint8_t maxOpenFiles, const char * partitionLabel)
       {
@@ -192,44 +193,43 @@ uint8_t   md_spiffs::readFile   (const char* filename, uint16_t len, char* textB
         ESP_LOGI(TAG, "Partition size: total: %d, used: %d", total, used);
         return ESP_OK;
       }
-  */
-/*
-  uint8_t disableSpiffs()
-    {
-      esp_vfs_spiffs_unregister(NULL);
-      ESP_LOGI(TAG, "SPIFFS unmounted");
-      return ESP_OK;
-    }
-  void app_main(void)
-  {
-      esp_vfs_spiffs_conf_t conf = {
-        .base_path = "/spiffs",
-        .partition_label = NULL,
-        .max_files = 5,
-        .format_if_mount_failed = true
-      };
-
-      initSpiffs(&conf);
-
-      const char* text = "Hello World!\n";
-
-      writeFile("/hello.txt", text);
-
-      deleteFile("/foo.txt");
-
-      renameFile("/hello.txt", "/foo.txt");
-
-      char line[64];
-
-      readFile("/foo.txt", 64, line);
-      // strip newline
-      char* pos = strchr(line, '\n');
-      if (pos) {
-          *pos = '\0';
+    uint8_t disableSpiffs()
+      {
+        esp_vfs_spiffs_unregister(NULL);
+        ESP_LOGI(TAG, "SPIFFS unmounted");
+        return ESP_OK;
       }
-      ESP_LOGI(TAG, "Read from file: '%s'", line);
+    void app_main(void)
+      {
+          esp_vfs_spiffs_conf_t conf =
+            {
+              .base_path = "/spiffs",
+              .partition_label = NULL,
+              .max_files = 5,
+              .format_if_mount_failed = true
+            };
 
-      // All done, unmount partition and disable SPIFFS
-      disableSpiffs();
-  }
+          initSpiffs(&conf);
+
+          const char* text = "Hello World!\n";
+
+          writeFile("/hello.txt", text);
+
+          deleteFile("/foo.txt");
+
+          renameFile("/hello.txt", "/foo.txt");
+
+          char line[64];
+
+          readFile("/foo.txt", 64, line);
+          // strip newline
+          char* pos = strchr(line, '\n');
+          if (pos) {
+              *pos = '\0';
+          }
+          ESP_LOGI(TAG, "Read from file: '%s'", line);
+
+          // All done, unmount partition and disable SPIFFS
+          disableSpiffs();
+      }
   */

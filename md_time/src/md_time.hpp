@@ -1,36 +1,35 @@
 /*
-  time.h/c - low level time and date functions
-  Copyright (c) Michael Margolis 2009-2014
-
-  Cloned and changed by Martin Dorfner 2021
-
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  Lesser General Public License for more details.
-
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-  1.0  6  Jan 2010 - initial release
-  1.1  12 Feb 2010 - fixed leap year calculation error
-  1.2  1  Nov 2010 - fixed setTime bug (thanks to Korman for this)
-  1.3  24 Mar 2012 - many edits by Paul Stoffregen: fixed timeStatus() to update
-                     status, updated examples for Arduino 1.0, fixed ARM
-                     compatibility issues, added TimeArduinoDue and TimeTeensy3
-                     examples, add error checking and messages to RTC examples,
-                     add examples to DS1307RTC library.
-  1.4  5  Sep 2014 - compatibility with Arduino 1.5.7
-
-  2.0  29 Mai 2021   "remove whired hack"
-*/
-
+ * time.h/c - low level time and date functions
+ * Copyright (c) Michael Margolis 2009-2014
+ *
+ * Cloned and changed by Martin Dorfner 2021
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * 1.0  6  Jan 2010 - initial release
+ * 1.1  12 Feb 2010 - fixed leap year calculation error
+ * 1.2  1  Nov 2010 - fixed setTime bug (thanks to Korman for this)
+ * 1.3  24 Mar 2012 - many edits by Paul Stoffregen: fixed timeStatus() to update
+ *                    status, updated examples for Arduino 1.0, fixed ARM
+ *                    compatibility issues, added TimeArduinoDue and TimeTeensy3
+ *                    examples, add error checking and messages to RTC examples,
+ *                    add examples to DS1307RTC library.
+ * 1.4  5  Sep 2014 - compatibility with Arduino 1.5.7
+ *
+ * 2.0  29 Mai 2021   "remove whired hack"
+ */
 #ifndef _MD_TIME_H
   #define _MD_TIME_H
   #include <inttypes.h>
@@ -68,10 +67,8 @@
       #define  CalendarYrToTm(Y)   ((Y) - 1970)
       #define  tmYearToY2k(Y)      ((Y) - 30)    // offset is from 2000
       #define  y2kYearToTm(Y)      ((Y) + 30)
-
       typedef time_t(*getExternalTime)();
       //typedef void  (*setExternalTime)(const time_t); // not used in this version
-
       /*==============================================================================*/
       /* Useful Constants */
         #define SECS_PER_MIN  ((time_t)(60UL))
@@ -81,8 +78,7 @@
         #define SECS_PER_WEEK ((time_t)(SECS_PER_DAY * DAYS_PER_WEEK))
         #define SECS_PER_YEAR ((time_t)(SECS_PER_DAY * 365UL)) // TODO: ought to handle leap years
         #define SECS_YR_2000  ((time_t)(946684800UL)) // the time at the start of y2k
-
-      /* Useful Macros for getting elapsed time */
+      // Useful Macros for getting elapsed time //
         #define numberOfSeconds(_time_) ((_time_) % SECS_PER_MIN)
         #define numberOfMinutes(_time_) (((_time_) / SECS_PER_MIN) % SECS_PER_MIN)
         #define numberOfHours(_time_) (((_time_) % SECS_PER_DAY) / SECS_PER_HOUR)
@@ -92,19 +88,18 @@
       // The following macros are used in calculating alarms and assume the clock is set to a date later than Jan 1 1971
       // Always set the correct time before setting alarms
         #define previousMidnight(_time_) (((_time_) / SECS_PER_DAY) * SECS_PER_DAY)  // time at the start of the given day
-        #define nextMidnight(_time_) (previousMidnight(_time_)  + SECS_PER_DAY)   // time at the end of the given day
+        #define nextMidnight(_time_) (previousMidnight(_time_)  + SECS_PER_DAY)      // time at the end of the given day
         #define elapsedSecsThisWeek(_time_) (elapsedSecsToday(_time_) +  ((dayOfWeek(_time_)-1) * SECS_PER_DAY))   // note that week starts on day 1
         #define previousSunday(_time_) ((_time_) - elapsedSecsThisWeek(_time_))      // time at the start of the week for the given time
-        #define nextSunday(_time_) (previousSunday(_time_)+SECS_PER_WEEK)          // time at the end of the week for the given time
+        #define nextSunday(_time_) (previousSunday(_time_)+SECS_PER_WEEK)            // time at the end of the week for the given time
 
-      /* Useful Macros for converting elapsed time to a time_t */
+      // Useful Macros for converting elapsed time to a time_t
         #define minutesToTime_t ((M)) ( (M) * SECS_PER_MIN)
         #define hoursToTime_t   ((H)) ( (H) * SECS_PER_HOUR)
         #define daysToTime_t    ((D)) ( (D) * SECS_PER_DAY) // fixed on Jul 22 2011
         #define weeksToTime_t   ((W)) ( (W) * SECS_PER_WEEK)
-
-      /*============================================================================*/
-      /*  time and date functions   */
+      //============================================================================
+      //  time and date functions
         int     hour();            // the hour now
         int     hour(time_t t);    // the hour for the given time
         int     hourFormat12();    // the hour now in 12 hour format
@@ -125,27 +120,22 @@
         int     month(time_t t);   // the month for the given time
         int     year();            // the full four digit year: (2009, 2010 etc)
         int     year(time_t t);    // the year for the given time
-
         time_t  now();             // return the current time as seconds since Jan 1 1970
         void    setTime(time_t t);
         void    setTime(int hr,int min,int sec,int day, int month, int yr);
         void    adjustTime(long adjustment);
-
-      /* date strings */
+      // date strings
         #define dt_MAX_STRING_LEN 9 // length of longest date string (excluding terminating null)
         char* monthStr(uint8_t month);
         char* dayStr(uint8_t day);
         char* monthShortStr(uint8_t month);
         char* dayShortStr(uint8_t day);
-
-      /* time sync functions	*/
+      // time sync functions
         timeStatus_t timeStatus(); // indicates if time has been set and recently synchronized
         void    setSyncProvider( getExternalTime getTimeFunction); // identify the external time provider
         void    setSyncInterval(time_t interval); // set the number of seconds between re-sync
-
-      /* low level functions to convert to and from system time                     */
+      // low level functions to convert to and from system time
         void breakTime(time_t time, tmElements_t &tm);  // break time_t into elements
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  time_t makeTime(const tmElements_t &tm);  // convert time elements into time_t
     #endif
-#endif /* _MD_TIME_H_ */
+#endif // _MD_TIME_H_
 
