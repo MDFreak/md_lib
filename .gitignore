@@ -1,5 +1,6 @@
 # Prerequisites
 *.d
+_TFT_eSPI
 
 # Compiled Object files
 *.slo
@@ -31,3 +32,4 @@
 *.out
 *.app
 .autogit/logs/log-17-10-2021-0-6-7.txt
+*.ino
